@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const UserLogin = () => {
   return (
     <>
-      <div className="py-6 w-full px-6 flex flex-col gap-5">
+      <div className="pt-33 w-full px-6 flex flex-col gap-5">
         <div className="flex flex-col gap-5 w-full">
           <div className="relative">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -41,15 +43,15 @@ const UserLogin = () => {
           </a>
         </div>
       </div>
-      <div className="w-full px-6 py-1 flex flex-col gap-6">
+      <div className="w-full px-6 py-5 flex flex-col gap-6">
         <button className="h-[50px] px-10 w-full bg-[#0ACF83] text-[16px] rounded-lg font-semibold font-dmsans tracking-[0.2px] text-[#ffffff]">
           Sign In
         </button>
         <p className="text-center font-light text-sm font-dmsans tracking-[0.2px] text-white">
           Didn’t have any account?{" "}
-          <a href="" className="text-[#0ACF83]">
+          <Link to={"/register"} className="text-[#0ACF83] underline">
             Sign Up here
-          </a>
+          </Link>
         </p>
       </div>
     </>

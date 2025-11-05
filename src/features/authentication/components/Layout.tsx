@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <div className="bg-auth min-h-screen max-h-full flex flex-col items-center">
-      <div className="flex flex-col py-28 gap-2 ">
+      <div className="flex flex-col pt-28 gap-2 ">
         <h1 className="text-center font-dmsans text-[#FFFFFF] text-[51px] font-bold tracking-[0.64px]">
           Audio
         </h1>
