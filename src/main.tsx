@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./features/authentication/components/Layout";
 import UserLogin from "./features/authentication/components/UserLogin";
 import UserRegister from "./features/authentication/components/UserRegister";
+import HomePage from "./features/home";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -15,7 +16,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/register" element={<UserRegister />} />
         </Route>
 
-        <Route path="/*" element={<div>Hello, World!</div>} />
+        <Route path="/*" element={<HomePage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
