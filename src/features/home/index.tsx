@@ -73,6 +73,31 @@ const HomePage = () => {
               Keyboard
             </Link>
           </div>
+          <div className="bg-white rounded-2xl flex gap-[15px] px-6 mx-6 mt-5">
+            <div className="flex flex-row gap-2.5 px-6 py-5 ">
+              <div className="flex flex-col gap-7 ">
+                <h1 className="font-bold font-montserrat text-[22px] tracking-[0.2px]">
+                  TMA-2 Modular Headphone
+                </h1>
+                <div className="flex items-center gap-3">
+                  <Link
+                    to={"/*"}
+                    className="font-dmsans text-sm font-semibold tracking-[0.2px] text-[#0ACF83]"
+                  >
+                    Shop now
+                  </Link>
+                  <img src="src/assets/images/icons/arrow-right.svg" alt="" />
+                </div>
+              </div>
+              <div className="flex items-center">
+                <img
+                  src="src/assets/images/pict/headphone.png"
+                  alt=""
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
