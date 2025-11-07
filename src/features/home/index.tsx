@@ -45,8 +45,8 @@ const HomePage = () => {
           />
         </div>
       </div>
-      <div className="pt-8 pb-6 rounded-3xl px-6 bg-[#F6F6F6] ">
-        <div className="flex flex-row gap-[11px] overflow-x-auto scrollbar-hide pl-6">
+      <div className="flex flex-col gap-5 pt-8 pb-6 rounded-3xl px-6 bg-[#F6F6F6] ">
+        <div className="flex flex-row gap-[11px] overflow-x-auto scrollbar-hide pl-6 -mx-6">
           <Link
             to={"/*"}
             className="px-[15px] flex items-center rounded-3xl py-1 bg-[#0ACF83] cursor-pointer text-[#ffffff] text-[11px] font-dmsans tracking-[0.2px]"
@@ -72,8 +72,8 @@ const HomePage = () => {
             Keyboard
           </Link>
         </div>
-        <div className="bg-white rounded-2xl flex gap-[15px] px-6 mt-5 ">
-          <div className="flex flex-row gap-2.5  py-5 ">
+        <div className="flex flex-row  bg-white rounded-2xl  gap-[15px] px-6 mt-5">
+          <div className="flex flex-row gap-2.5 py-5 ">
             <div className="flex flex-col gap-7 w-[151px] ">
               <h1 className="font-bold font-montserrat text-[22px] tracking-[0.2px]">
                 TMA-2 Modular Headphone
@@ -94,6 +94,23 @@ const HomePage = () => {
                 alt=""
                 className="w-full h-full object-contain"
               />
+            </div>
+          </div>
+        </div>
+        <div className="flex gap-auto justify-between ">
+          <h2 className="font-dmsans text-[16px] font-normal tracking-[0.2px]">
+            Featured Products
+          </h2>
+          <Link to={"/*"} className="font-dmsans font-extralight text-sm tracking-[0.2px]">
+            See All
+          </Link>
+        </div>
+        <div className="flex flex-row gap-[15px] pl-6 overflow-x-auto  scrollbar-hide ">
+          <div className="bg-[#ffffff] flex flex-col w-[155px] rounded-2xl items-center px-2.5 pt-[15px] gap-5">
+            <img src="src/assets/images/pict/headphone.png" alt="" />
+            <div className="flex flex-col">
+              <h2>TMA-2 HD Wireless</h2>
+              <h3>USD 350</h3>
             </div>
           </div>
         </div>
