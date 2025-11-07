@@ -80,7 +80,7 @@ const HomePage = () => {
               </h1>
               <div className="flex items-center gap-3">
                 <Link
-                  to={"/*"}
+                  to={"/search"}
                   className="font-dmsans text-sm font-semibold tracking-[0.2px] text-[#0ACF83]"
                 >
                   Shop now
@@ -101,16 +101,26 @@ const HomePage = () => {
           <h2 className="font-dmsans text-[16px] font-normal tracking-[0.2px]">
             Featured Products
           </h2>
-          <Link to={"/*"} className="font-dmsans font-extralight text-sm tracking-[0.2px]">
+          <Link
+            to={"/*"}
+            className="font-dmsans font-extralight text-sm tracking-[0.2px]"
+          >
             See All
           </Link>
         </div>
-        <div className="flex flex-row gap-[15px] pl-6 overflow-x-auto  scrollbar-hide ">
+        <div className="flex flex-row gap-[15px]  overflow-x-auto  scrollbar-hide ">
           <div className="bg-[#ffffff] flex flex-col w-[155px] rounded-2xl items-center px-2.5 pt-[15px] gap-5">
-            <img src="src/assets/images/pict/headphone.png" alt="" />
-            <div className="flex flex-col">
-              <h2>TMA-2 HD Wireless</h2>
-              <h3>USD 350</h3>
+            <img src="src/assets/images/pict/headphone.png" className="h-[145px]" alt="" />
+            <div className="flex flex-col gap-0.5 pb-3">
+              <h2 className="font-dmsans tracking-[0.2px] text-sm">TMA-2 HD Wireless</h2>
+              <h3 className="font-dmsans font-bold tracking-[0.2px] text-[12px]">USD 350</h3>
+            </div>
+          </div>
+          <div className="bg-[#ffffff] flex flex-col w-[155px]  rounded-2xl items-center px-2.5 pt-[15px] gap-5">
+            <img src="src/assets/images/pict/earphone.png" className="h-[145px]" alt="" />
+            <div className="flex flex-col gap-0.5 pb-3">
+              <h2 className="font-dmsans tracking-[0.2px] text-sm">C02 - Cable</h2>
+              <h3 className="font-dmsans font-bold tracking-[0.2px] text-[12px]">USD 25</h3>
             </div>
           </div>
         </div>
