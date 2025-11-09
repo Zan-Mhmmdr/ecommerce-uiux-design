@@ -7,6 +7,8 @@ import UserLogin from "./features/authentication/components/UserLogin";
 import UserRegister from "./features/authentication/components/UserRegister";
 import HomePage from "./features/home";
 import SearchPage from "./features/search";
+import ProductPage from "./features/products";
+import FilterPage from "./features/filter";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -19,6 +21,12 @@ createRoot(document.getElementById("root")!).render(
 
         <Route path="/*" element={<HomePage />} />
         <Route path="search" element={<SearchPage />} />
+
+        <Route path="products">
+          <Route index element={<ProductPage />} />
+          <Route path="filter" element={<FilterPage />} />
+        </Route>
+        
       </Routes>
     </BrowserRouter>
   </StrictMode>
