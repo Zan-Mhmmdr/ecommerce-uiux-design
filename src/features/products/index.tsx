@@ -293,6 +293,75 @@ const ProductPage = () => {
                 <img src="src/assets/x-2.svg" alt="" />
               </button>
             </div>
+            <div className="flex gap-2.5 flex-col">
+              <h1 className="font-dmsans text-[16px] tracking-[0.2px]   ">
+                Category
+              </h1>
+              <div className="flex flex-row gap-[11px] overflow-x-auto no-scrollbar">
+                <button className="px-[15px] flex items-center rounded-3xl py-1 bg-[#0ACF83] cursor-pointer text-[#ffffff] text-[11px] font-dmsans tracking-[0.2px]">
+                  Headphone
+                </button>
+                <button className="px-[15px] flex items-center rounded-3xl py-1 cursor-pointer text-[#7F7F7F] text-[11px] font-dmsans tracking-[0.2px]">
+                  Headband
+                </button>
+                <button className="px-[15px] flex items-center rounded-3xl py-1 cursor-pointer text-[#7F7F7F] text-[11px] font-dmsans tracking-[0.2px]">
+                  Earpads
+                </button>
+                <button className="px-[15px] flex items-center rounded-3xl py-1 cursor-pointer text-[#7F7F7F] text-[11px] font-dmsans tracking-[0.2px]">
+                  Speaker
+                </button>
+              </div>
+            </div>
+            <div className="flex gap-2.5 flex-col">
+              <h1 className="font-dmsans text-[16px] tracking-[0.2px]">
+                Sort By
+              </h1>
+              <div className="flex flex-col gap-3">
+                <div className="flex gap-3 ">
+                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#0ACF83] cursor-pointer leading-5 text-[#ffffff] text-sm font-dmsans tracking-[0.2px]">
+                    Popularity{" "}
+                  </button>
+                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#fffff] cursor-pointer leading-5 text-black outline-2 outline-[#7F7F7F] text-sm font-dmsans tracking-[0.2px]">
+                    Newest{" "}
+                  </button>
+                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#fffff] cursor-pointer leading-5 text-black outline-2 outline-[#7F7F7F] text-sm font-dmsans tracking-[0.2px]">
+                    Oldest{" "}
+                  </button>
+                </div>
+                <div className="flex gap-3 ">
+                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#fffff] cursor-pointer leading-5 text-black outline-2 outline-[#7F7F7F] text-sm font-dmsans tracking-[0.2px]">
+                    High Price{" "}
+                  </button>
+                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#fffff] cursor-pointer leading-5 text-black outline-2 outline-[#7F7F7F] text-sm font-dmsans tracking-[0.2px]">
+                    Low Price{" "}
+                  </button>
+                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#fffff] cursor-pointer leading-5 text-black outline-2 outline-[#7F7F7F] text-sm font-dmsans tracking-[0.2px]">
+                    Review{" "}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-2.5 flex-col ">
+              <h1 className="font-dmsans text-[16px] tracking-[0.2px] ">
+                Price Range
+              </h1>
+              <div className="flex flex-row gap-[17px] ">
+                <input
+                  type="text"
+                  placeholder="Min Price"
+                  className="flex items-center w-[155px] h-[45px] rounded-[10px] gap-3 px-[15px] outline-2 font-dmsans text-sm tracking-[0.2px]  outline-[#BABABA]"
+                />
+                <input
+                  type="text"
+                  placeholder="Min Price"
+                  className="flex items-center w-[155px] h-[45px] rounded-[10px] gap-3 px-[15px] outline-2 font-dmsans text-sm tracking-[0.2px]  outline-[#BABABA]"
+                />
+              </div>
+            </div>
+
+            <button className="px-2.5 py-5  h-[50px] flex items-center justify-center rounded-[10px] bg-[#0ACF83] text-[16px] font-dmsans font-semibold tracking-[0.2px] text-[#ffffff]">
+              Apply Filter
+            </button>
           </div>
         </div>
       )}
