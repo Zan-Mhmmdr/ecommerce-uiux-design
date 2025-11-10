@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const ProductPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <div className="pt-[55px] px-6 flex justify-between">
@@ -20,13 +23,13 @@ const ProductPage = () => {
         </h1>
       </div>
       <div className="flex flex-row items-center px-6 gap-[21px] pb-13 overflow-x-auto no-scrollbar py-1">
-        <Link
-          to={"/products/filter"}
+        <button
+          onClick={() => setIsModalOpen(true)}
           className="flex shrink-0 gap-2 px-[15px] py-2.5 rounded-2xl outline-2 outline-[#BABABA]"
         >
           <img src="src/assets/images/icons/sliders.svg" alt="" />
           <h1 className="font-dmsans text-sm tracking-[0.2px]">Filter</h1>
-        </Link>
+        </button>
         <div className="flex flex-row gap-[25px] items-center shrink-0 ">
           <Link
             to={"/products"}
@@ -278,6 +281,21 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
+
+      {isModalOpen && (
+        <div className="bg-black/50 bg-opacity-20 fixed inset-0 flex justify-center items-start px-6 pt-20 z-50">
+          <div className="flex flex-col p-6 gap-[35px] rounded-2xl bg-white w-full">
+            <div className="flex gap-[35px] justify-between items-center">
+              <h1 className="font-montserrat text-2xl font-bold tracking-[0.2px]">
+                Filter
+              </h1>
+              <button onClick={() => setIsModalOpen(false)}>
+                <img src="src/assets/x-2.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
