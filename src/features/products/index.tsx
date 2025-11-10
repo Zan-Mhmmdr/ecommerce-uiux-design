@@ -94,7 +94,7 @@ const ProductPage = () => {
                     86 Reviews
                   </span>
                 </div>
-                <Link to={"/search"}>
+                <Link to={"product-detail"}>
                   <img src="src/assets/images/icons/more-vertical.svg" alt="" />
                 </Link>
               </div>
@@ -129,7 +129,7 @@ const ProductPage = () => {
                     86 Reviews
                   </span>
                 </div>
-                <Link to={"/search"}>
+                <Link to={"product-detail"}>
                   <img src="src/assets/images/icons/more-vertical.svg" alt="" />
                 </Link>
               </div>
@@ -166,7 +166,7 @@ const ProductPage = () => {
                     86 Reviews
                   </span>
                 </div>
-                <Link to={"/search"}>
+                <Link to={"product-detail"}>
                   <img src="src/assets/images/icons/more-vertical.svg" alt="" />
                 </Link>
               </div>
@@ -201,7 +201,7 @@ const ProductPage = () => {
                     86 Reviews
                   </span>
                 </div>
-                <Link to={"/search"}>
+                <Link to={"product-detail"}>
                   <img src="src/assets/images/icons/more-vertical.svg" alt="" />
                 </Link>
               </div>

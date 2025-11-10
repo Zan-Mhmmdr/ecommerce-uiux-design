@@ -8,6 +8,7 @@ import UserRegister from "./features/authentication/components/UserRegister";
 import HomePage from "./features/home";
 import SearchPage from "./features/search";
 import ProductPage from "./features/products";
+import ProductDetail from "./features/productDetail";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById("root")!).render(
 
         <Route path="products">
           <Route index element={<ProductPage />} />
+          <Route path="product-detail" element={<ProductDetail />} />
         </Route>
         
       </Routes>
