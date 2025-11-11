@@ -22,7 +22,7 @@ const ProductDetail = () => {
           <Link to="/products">
             <img src={chevronLeft} alt="Back" />
           </Link>
-          <Link to="/home">
+          <Link to="/shopping-cart">
             <img src={shoppingCart} alt="Cart" />
           </Link>
         </div>

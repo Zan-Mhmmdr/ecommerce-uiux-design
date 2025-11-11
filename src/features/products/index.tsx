@@ -10,8 +10,8 @@ const ProductPage = () => {
         <Link to="/home">
           <img src="src/assets/images/icons/chevron-left.svg" alt="Back" />
         </Link>
-        <Link to="/home">
-          <img src="src/assets/images/icons/shopping-cart.svg" alt="Back" />
+        <Link to="/shopping-cart">
+          <img src="src/assets/images/icons/shopping-cart.svg" alt="Cart" />
         </Link>
       </div>
       <div className="flex flex-col px-6 gap-[11px] py-6">

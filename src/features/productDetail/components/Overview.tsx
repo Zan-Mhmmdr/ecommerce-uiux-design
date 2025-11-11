@@ -9,7 +9,6 @@ import rating from "/src/assets/images/icons/Rating.svg";
 import { Link } from "react-router-dom";
 
 const Overview = () => {
-
   return (
     <>
       <div className="flex flex-row overflow-x-auto no-scrollbar gap-5  pt-6">
@@ -167,7 +166,7 @@ const Overview = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center py-10">
+      <div className="flex fixed px-6 bottom-0 left-0 right-0 items-center bg-white justify-center pb-6">
         <button className="w-full px-2.5 py-5 flex justify-center  gap-2.5 font-dmsans text-[16px] tracking-[0.2px] leading-5 text-[#FFFFFF] bg-[#0ACF83] rounded-[10px]">
           Add To Cart
         </button>
@@ -176,4 +175,4 @@ const Overview = () => {
   );
 };
 
-export default Overview
+export default Overview;
