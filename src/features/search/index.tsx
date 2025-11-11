@@ -10,7 +10,7 @@ const SearchPage = () => {
         <h1 className="font-bold text-[16px] font-dmsans tracking-[0.2px] leading-5">
           Search
         </h1>
-        <Link to="/cart">
+        <Link to="/shopping-cart">
           <img src="src/assets/images/icons/shopping-cart.svg" alt="Cart" />
         </Link>
       </div>
