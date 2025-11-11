@@ -4,6 +4,11 @@ import shoppingCart from "/src/assets/images/icons/shopping-cart.svg";
 import headset from "/src/assets/images/pict/headset.png";
 import pictreview from "/src/assets/images/icons/pict-review.svg";
 import rating from "/src/assets/images/icons/Rating.svg";
+import rating5 from "/src/assets/images/icons/rating-5.svg";
+import headphonee from "/src/assets/images/pict/headphone.png";
+import kanade from "/src/assets/images/pict/kanade.jpeg";
+import akane from "/src/assets/images/pict/akane.jpg";
+import reigen from "/src/assets/images/pict/reigen.png";
 import { useState } from "react";
 
 const ProductDetail = () => {
@@ -76,7 +81,7 @@ const ProductDetail = () => {
           <div className="flex flex-col gap-[17px] pt-6 ">
             <div className="flex gap-[15px] ">
               <div className="flex gap-[13px] w-full">
-                <img src={pictreview} alt="" />
+                <img src={reigen} className="rounded-[50%] size-10" alt="" />
                 <div className="flex flex-col gap-1 w-full">
                   <div className="flex justify-between w-full">
                     <h1 className="font-dmsans text-[16px] tracking-[0.2px] ">
@@ -94,48 +99,61 @@ const ProductDetail = () => {
             </div>
             <div className="pl-[54px]">
               <p className="font-dmsans text-sm tracking-[0.2px] leading-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Honestly, this Sony headphone surprised me. The sound quality is
+                crystal clear and the bass hits just right. Super comfy for long
+                sessions — definitely worth the price.
               </p>
             </div>
           </div>
           <div className="flex flex-col gap-[17px] pt-6 ">
             <div className="flex gap-[15px] ">
               <div className="flex gap-[13px] w-full">
-                <img src={pictreview} alt="" />
+                <img src={akane} className="rounded-[50%] size-10" alt="" />
                 <div className="flex flex-col gap-1 w-full">
                   <div className="flex justify-between w-full">
                     <h1 className="font-dmsans text-[16px] tracking-[0.2px] ">
-                      Reigen Arataka
+                      Kurokawa Akane
                     </h1>
                     <p className="font-dmsans text-[12px] tracking-[0.2px] text-[#7F7F7F]">
-                      1 Month ago
+                      3 Month ago
                     </p>
                   </div>
                   <div className="flex gap-[5px]">
-                    <img src={rating} alt="" />
+                    <img src={rating5} alt="" />
                   </div>
                 </div>
               </div>
             </div>
             <div className="pl-[54px]">
               <p className="font-dmsans text-sm tracking-[0.2px] leading-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                The sound feels so real, like I’m inside a movie scene. I love
+                how clean the design is — elegant but simple. Perfect for when I
+                need to focus on scripts or just relax.
               </p>
+            </div>
+            <div className="flex flex-row gap-[15px] pl-[54px]">
+              <div className="bg-[#FFFFFF] border border-[#BABABA] rounded-[10px] p-2.5">
+                <img src={headphonee} className="w-20" alt="" />
+              </div>
+              <div className="bg-[#FFFFFF] border border-[#BABABA] rounded-[10px] p-2.5">
+                <img src={headphonee} className="w-20" alt="" />
+              </div>
+              <div className="bg-[#FFFFFF] border border-[#BABABA] rounded-[10px] p-2.5">
+                <img src={headphonee} className="w-20" alt="" />
+              </div>
             </div>
           </div>
           <div className="flex flex-col gap-[17px] py-6 ">
             <div className="flex gap-[15px] ">
               <div className="flex gap-[13px] w-full">
-                <img src={pictreview} alt="" />
+                <img src={kanade} className="rounded-[50%] size-10" alt="" />
                 <div className="flex flex-col gap-1 w-full">
                   <div className="flex justify-between w-full">
                     <h1 className="font-dmsans text-[16px] tracking-[0.2px] ">
-                      Reigen Arataka
+                      Kanade Tachibana
                     </h1>
                     <p className="font-dmsans text-[12px] tracking-[0.2px] text-[#7F7F7F]">
-                      1 Month ago
+                      4 Month ago
                     </p>
                   </div>
                   <div className="flex gap-[5px]">
@@ -146,8 +164,9 @@ const ProductDetail = () => {
             </div>
             <div className="pl-[54px]">
               <p className="font-dmsans text-sm tracking-[0.2px] leading-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                The sound is peaceful… it feels like floating in another world.
+                I like how gentle the bass is — it doesn’t hurt my ears, just
+                pure calmness.
               </p>
             </div>
           </div>
