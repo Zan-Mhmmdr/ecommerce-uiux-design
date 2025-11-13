@@ -14,11 +14,13 @@ const HomePage = () => {
           </h2>
         </div>
 
-        <img
-          src="src/assets/images/icons/ado.png"
-          className="w-[35px] rounded-full"
-          alt=""
-        />
+        <Link to={"/profile"}>
+          <img
+            src="src/assets/images/icons/ado.png"
+            className="w-[35px] rounded-full"
+            alt=""
+          />
+        </Link>
       </div>
       <div className="pt-[35px] bg-[#ffffff]  px-6">
         <p className="font-dmsans text-sm tracking-[0.2px] leading-6">
@@ -134,8 +136,6 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-
-       
       </div>
     </>
   );
