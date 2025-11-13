@@ -10,6 +10,7 @@ import SearchPage from "./features/search";
 import ProductPage from "./features/products";
 import ProductDetail from "./features/productDetail";
 import ShoppingCart from "./features/shoppingCart";
+import Profile from "./features/profile";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -29,6 +30,8 @@ createRoot(document.getElementById("root")!).render(
         </Route>
 
         <Route path="/shopping-cart" element={<ShoppingCart />} />
+
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
