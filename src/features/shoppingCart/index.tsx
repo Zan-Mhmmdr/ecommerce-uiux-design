@@ -6,8 +6,12 @@ import min from "/src/assets/images/icons/-.svg";
 import headphone from "/src/assets/images/pict/headphone-small.png";
 import earphone from "/src/assets/images/pict/earphone.png";
 import proceed from "/src/assets/images/icons/chevron-right.svg";
+import { useCartStore } from "./store/useCartStore";
 
 const ShoppingCart = () => {
+  const { items, remove, clear } = useCartStore();
+
+  const total = items.reduce((sum, item) => sum + item.price * item.qty, 0);
   return (
     <>
       <div className="flex px-6 pt-[55px] justify-between">
@@ -95,7 +99,9 @@ const ShoppingCart = () => {
           </span>
         </div>
         <button className="w-full px-[30px] items-center py-5 flex justify-between  gap-2.5 font-dmsans text-[16px] tracking-[0.2px] leading-5 text-[#FFFFFF] bg-[#0ACF83] rounded-[10px]">
-          <p className="font-dmsans font-semibold text-sm tracking-[0.7px]">Proceed to Checkout</p>
+          <p className="font-dmsans font-semibold text-sm tracking-[0.7px]">
+            Proceed to Checkout
+          </p>
           <img src={proceed} alt="" />
         </button>
       </div>
