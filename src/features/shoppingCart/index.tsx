@@ -9,7 +9,8 @@ import proceed from "/src/assets/images/icons/chevron-right.svg";
 import { useCartStore } from "./store/useCartStore";
 
 const ShoppingCart = () => {
-  const { items, remove, clear } = useCartStore();
+  const items = useCartStore((state) => state.items);
+
 
   const total = items.reduce((sum, item) => sum + item.price * item.qty, 0);
   return (
@@ -73,7 +74,7 @@ const ShoppingCart = () => {
             </div>
             <div className="flex justify-between">
               <div className="flex flex-row  gap-[25px]">
-                <button>
+                <button onClick={(e) => addItems(e)}>
                   <img src={add} alt="" />
                 </button>
                 <span>1</span>

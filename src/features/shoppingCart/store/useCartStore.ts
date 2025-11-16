@@ -10,7 +10,7 @@ type CartItem = {
 
 type CartState = {
   items: CartItem[];
-  add: (item: CartItem) => void;
+  addItems: (item: CartItem) => void;
   remove: (id: number) => void;
   clear: () => void;
 };
@@ -18,7 +18,7 @@ type CartState = {
 export const useCartStore = create<CartState>((set) => ({
   items: [],
 
-  add: (item) =>
+  addItems: (item) =>
     set((state) => {
       const exists = state.items.find((i) => i.id === item.id);
 
