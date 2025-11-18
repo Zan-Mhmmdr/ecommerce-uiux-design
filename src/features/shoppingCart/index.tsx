@@ -45,11 +45,11 @@ const ShoppingCart = () => {
                 </div>
                 <div className="flex justify-between">
                   <div className="flex flex-row  gap-[25px]">
-                    <button onClick={() => increaseQty(item.id)}>
+                    <button onClick={() => decreaseQty(item.id)}>
                       <img src={add} alt="" />
                     </button>
                     <span>{item.qty}</span>
-                    <button onClick={() => decreaseQty(item.id)}>
+                    <button onClick={() => increaseQty(item.id)}>
                       <img src={min} alt="" />
                     </button>
                   </div>
@@ -59,7 +59,7 @@ const ShoppingCart = () => {
                 </div>
               </div>
             </div>
-            <div className="flex gap-[15px]">
+            <div className="flex gap-[15px] pt-8">
               <div className="bg-[#F6F6F6] p-2.5 rounded-2xl shrink-0">
                 <img src={earphone} className="size-25" alt="" />
               </div>
@@ -74,11 +74,11 @@ const ShoppingCart = () => {
                 </div>
                 <div className="flex justify-between">
                   <div className="flex flex-row  gap-[25px]">
-                    <button onClick={() => increaseQty(item.id)}>
+                    <button onClick={() => decreaseQty(item.id)}>
                       <img src={add} alt="" />
                     </button>
                     <span>{item.qty}</span>
-                    <button onClick={() => decreaseQty(item.id)}>
+                    <button onClick={() => increaseQty(item.id)}>
                       <img src={min} alt="" />
                     </button>
                   </div>
