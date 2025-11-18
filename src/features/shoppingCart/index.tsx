@@ -9,10 +9,8 @@ import proceed from "/src/assets/images/icons/chevron-right.svg";
 import { useCartStore } from "./store/useCartStore";
 
 const ShoppingCart = () => {
-  const items = useCartStore((state) => state.items);
-
-
-  const total = items.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const { items, increaseQty, decreaseQty } = useCartStore();
+  console.log(items);
   return (
     <>
       <div className="flex px-6 pt-[55px] justify-between">
@@ -30,64 +28,68 @@ const ShoppingCart = () => {
       </div>
 
       <div className="flex flex-col px-6 gap-[35px] pt-10">
-        <div className="flex gap-[15px]">
-          <div className="bg-[#F6F6F6] p-2.5 rounded-2xl shrink-0">
-            <img src={headphone} className="size-25" alt="" />
-          </div>
-          <div className="flex flex-col place-content-between w-full">
-            <div className="flex flex-col gap-[5px] ">
-              <h1 className="font-dmsans text-[16px] tracking-[0.2px] ">
-                TMA-2 Comfort Wireless{" "}
-              </h1>
-              <h2 className="font-dmsans text-sm tracking-[0.2px] font-bold">
-                USD 270
-              </h2>
-            </div>
-            <div className="flex justify-between">
-              <div className="flex flex-row  gap-[25px]">
-                <button>
-                  <img src={add} alt="" />
-                </button>
-                <span>1</span>
-                <button>
-                  <img src={min} alt="" />
-                </button>
+        {items.map((item) => (
+          <div key={item.id}>
+            <div className="flex gap-[15px]">
+              <div className="bg-[#F6F6F6] p-2.5 rounded-2xl shrink-0">
+                <img src={headphone} className="size-25" alt="" />
               </div>
-              <button>
-                <img src={trash} className="opacity-50" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="flex gap-[15px]">
-          <div className="bg-[#F6F6F6] p-2.5 rounded-2xl shrink-0">
-            <img src={earphone} className="size-25" alt="" />
-          </div>
-          <div className="flex flex-col place-content-between w-full">
-            <div className="flex flex-col gap-[5px] ">
-              <h1 className="font-dmsans text-[16px] tracking-[0.2px] ">
-                C02 - Cable
-              </h1>
-              <h2 className="font-dmsans text-sm tracking-[0.2px] font-bold">
-                USD 25
-              </h2>
-            </div>
-            <div className="flex justify-between">
-              <div className="flex flex-row  gap-[25px]">
-                <button onClick={(e) => addItems(e)}>
-                  <img src={add} alt="" />
-                </button>
-                <span>1</span>
-                <button>
-                  <img src={min} alt="" />
-                </button>
+              <div className="flex flex-col place-content-between w-full">
+                <div className="flex flex-col gap-[5px] ">
+                  <h1 className="font-dmsans text-[16px] tracking-[0.2px] ">
+                    TMA-2 Comfort Wireless{" "}
+                  </h1>
+                  <h2 className="font-dmsans text-sm tracking-[0.2px] font-bold">
+                    USD 270
+                  </h2>
+                </div>
+                <div className="flex justify-between">
+                  <div className="flex flex-row  gap-[25px]">
+                    <button onClick={() => increaseQty(item.id)}>
+                      <img src={add} alt="" />
+                    </button>
+                    <span>{item.qty}</span>
+                    <button onClick={() => decreaseQty(item.id)}>
+                      <img src={min} alt="" />
+                    </button>
+                  </div>
+                  <button>
+                    <img src={trash} className="opacity-50" alt="" />
+                  </button>
+                </div>
               </div>
-              <button>
-                <img src={trash} className="opacity-50" alt="" />
-              </button>
+            </div>
+            <div className="flex gap-[15px]">
+              <div className="bg-[#F6F6F6] p-2.5 rounded-2xl shrink-0">
+                <img src={earphone} className="size-25" alt="" />
+              </div>
+              <div className="flex flex-col place-content-between w-full">
+                <div className="flex flex-col gap-[5px] ">
+                  <h1 className="font-dmsans text-[16px] tracking-[0.2px] ">
+                    C02 - Cable
+                  </h1>
+                  <h2 className="font-dmsans text-sm tracking-[0.2px] font-bold">
+                    USD 25
+                  </h2>
+                </div>
+                <div className="flex justify-between">
+                  <div className="flex flex-row  gap-[25px]">
+                    <button onClick={() => increaseQty(item.id)}>
+                      <img src={add} alt="" />
+                    </button>
+                    <span>{item.qty}</span>
+                    <button onClick={() => decreaseQty(item.id)}>
+                      <img src={min} alt="" />
+                    </button>
+                  </div>
+                  <button>
+                    <img src={trash} className="opacity-50" alt="" />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
 
       <div className="flex flex-col fixed bottom-0 left-0 right-0 items-center px-6 bg-white justify-center pb-5">
