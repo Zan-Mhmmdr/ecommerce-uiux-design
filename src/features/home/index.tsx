@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useCartStore } from "../../store/useCartStore";
 
 const HomePage = () => {
+  const { items } = useCartStore();
+
   return (
     <>
       <div className=" flex flex-row justify-between bg-[#ffffff] pt-[50px] px-6 items-center">
@@ -105,36 +108,22 @@ const HomePage = () => {
           </Link>
         </div>
         <div className="flex flex-row gap-[15px]  overflow-x-auto  scrollbar-hide ">
-          <div className="bg-[#ffffff] flex flex-col w-[155px] rounded-2xl items-center px-2.5 pt-[15px] gap-5">
-            <img
-              src="src/assets/images/pict/headphone.png"
-              className="h-[145px]"
-              alt=""
-            />
-            <div className="flex flex-col gap-0.5 pb-3">
-              <h2 className="font-dmsans tracking-[0.2px] text-sm">
-                TMA-2 HD Wireless
-              </h2>
-              <h3 className="font-dmsans font-bold tracking-[0.2px] text-[12px]">
-                USD 350
-              </h3>
-            </div>
-          </div>
-          <div className="bg-[#ffffff] flex flex-col w-[155px]  rounded-2xl items-center px-2.5 pt-[15px] gap-5">
-            <img
-              src="src/assets/images/pict/earphone.png"
-              className="h-[145px]"
-              alt=""
-            />
-            <div className="flex flex-col w-full gap-0.5 pb-3">
-              <h2 className="font-dmsans  tracking-[0.2px] text-sm">
-                C02 - Cable
-              </h2>
-              <h3 className="font-dmsans font-bold tracking-[0.2px] text-[12px]">
-                USD 25
-              </h3>
-            </div>
-          </div>
+          {items.map((item) => (
+            <Link
+              to={"/shopping-cart"}
+              className="bg-[#ffffff] shrink-0 flex flex-col w-[155px] rounded-2xl items-center px-2.5 pt-[15px] gap-5"
+            >
+              <img src={item.image} className="h-[145px]" alt="" />
+              <div className="flex flex-col gap-0.5 pb-3">
+                <h2 className="font-dmsans tracking-[0.2px] text-sm">
+                  {item.name}
+                </h2>
+                <h3 className="font-dmsans font-bold tracking-[0.2px] text-[12px]">
+                  USD {item.price}
+                </h3>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </>

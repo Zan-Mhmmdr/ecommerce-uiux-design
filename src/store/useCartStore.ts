@@ -21,10 +21,17 @@ export const useCartStore = create<CartState>((set) => ({
   items: [
     {
       id: 1,
-      name: "Sample Product",
-      price: 10000,
+      name: "TMA-2 Comfort Wireless",
+      price: 270,
       qty: 1,
-      image: "/sample.jpg",
+      image: "/src/assets/images/pict/headphone-small.png",
+    },
+    {
+      id: 2,
+      name: " C02 - Cable",
+      price: 25,
+      qty: 1,
+      image: "/src/assets/images/pict/earphone.png",
     },
   ],
 
