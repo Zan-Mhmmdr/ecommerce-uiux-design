@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { products } from "./data/products";
 
 const ProductPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,222 +64,52 @@ const ProductPage = () => {
           </Link>
         </div>
       </div>
+
       <div className="flex flex-col p-6 gap-[13px] bg-[#F3F3F3] rounded-t-4xl">
-        <div className="flex flex-row gap-[15px]">
-          <div className="flex flex-col gap-5 px-2.5 py-[15px] bg-[#ffffff] rounded-3xl ">
-            <div className="flex items-center justify-center">
-              <img
-                src="src/assets/images/pict/headphone-small.png"
-                className="w-[125px] h-[125px]"
-                alt=""
-              />
-            </div>
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-1">
-                <h1 className="font-dmsans font-medium text-[16px] tracking-[0.2px]">
-                  TMA-2 Comfort Wireless{" "}
-                </h1>
-                <h1 className="font-dmsans font-extrabold text-sm tracking-[0.2px] ">
-                  USD 270
-                </h1>
+        <div className="grid grid-cols-2 gap-4">
+          {products.map((product) => (
+            <div className="flex flex-col gap-5 px-2.5 py-[15px] bg-[#ffffff] rounded-3xl ">
+              <div className="flex items-center justify-center">
+                <img
+                  src={product.image}
+                  className="w-[125px] h-[125px]"
+                  alt=""
+                />
               </div>
-              <div className="flex flex-row justify-between w-full items-center">
-                <div className="flex gap-2.5 ">
-                  <div className="flex gap-[3px] ">
-                    <img src="src/assets/images/icons/star-filled.svg" alt="" />
-                    <h2 className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                      4.6
-                    </h2>
-                  </div>
-                  <span className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                    86 Reviews
-                  </span>
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-1">
+                  <h1 className="font-dmsans font-medium text-[16px] tracking-[0.2px]">
+                    {product.name}{" "}
+                  </h1>
+                  <h1 className="font-dmsans font-extrabold text-sm tracking-[0.2px] ">
+                    USD {product.price}
+                  </h1>
                 </div>
-                <Link to={"product-detail"}>
-                  <img src="src/assets/images/icons/more-vertical.svg" alt="" />
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 px-2.5 py-[15px] bg-[#ffffff] rounded-3xl ">
-            <div className="flex items-center justify-center">
-              <img
-                src="src/assets/images/pict/headphone-small.png"
-                className="w-[125px] h-[125px]"
-                alt=""
-              />
-            </div>
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-1">
-                <h1 className="font-dmsans font-medium text-[16px] tracking-[0.2px]">
-                  TMA-2 Comfort Wireless{" "}
-                </h1>
-                <h1 className="font-dmsans font-extrabold text-sm tracking-[0.2px] ">
-                  USD 270
-                </h1>
-              </div>
-              <div className="flex flex-row justify-between w-full items-center">
-                <div className="flex gap-2.5 ">
-                  <div className="flex gap-[3px] ">
-                    <img src="src/assets/images/icons/star-filled.svg" alt="" />
-                    <h2 className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                      4.6
-                    </h2>
+                <div className="flex flex-row justify-between w-full items-center">
+                  <div className="flex gap-2.5 ">
+                    <div className="flex gap-[3px] ">
+                      <img
+                        src="src/assets/images/icons/star-filled.svg"
+                        alt=""
+                      />
+                      <h2 className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
+                        {product.rating}
+                      </h2>
+                    </div>
+                    <span className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
+                      {product.reviews } Reviews
+                    </span>
                   </div>
-                  <span className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                    86 Reviews
-                  </span>
+                  <Link to={"product-detail"}>
+                    <img
+                      src="src/assets/images/icons/more-vertical.svg"
+                      alt=""
+                    />
+                  </Link>
                 </div>
-                <Link to={"product-detail"}>
-                  <img src="src/assets/images/icons/more-vertical.svg" alt="" />
-                </Link>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="flex flex-row gap-[15px]">
-          <div className="flex flex-col gap-5 px-2.5 py-[15px] bg-[#ffffff] rounded-3xl ">
-            <div className="flex items-center justify-center">
-              <img
-                src="src/assets/images/pict/headphone-small.png"
-                className="w-[125px] h-[125px]"
-                alt=""
-              />
-            </div>
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-1">
-                <h1 className="font-dmsans font-medium text-[16px] tracking-[0.2px]">
-                  TMA-2 Comfort Wireless{" "}
-                </h1>
-                <h1 className="font-dmsans font-extrabold text-sm tracking-[0.2px] ">
-                  USD 270
-                </h1>
-              </div>
-              <div className="flex flex-row justify-between w-full items-center">
-                <div className="flex gap-2.5 ">
-                  <div className="flex gap-[3px] ">
-                    <img src="src/assets/images/icons/star-filled.svg" alt="" />
-                    <h2 className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                      4.6
-                    </h2>
-                  </div>
-                  <span className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                    86 Reviews
-                  </span>
-                </div>
-                <Link to={"product-detail"}>
-                  <img src="src/assets/images/icons/more-vertical.svg" alt="" />
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 px-2.5 py-[15px] bg-[#ffffff] rounded-3xl ">
-            <div className="flex items-center justify-center">
-              <img
-                src="src/assets/images/pict/headphone-small.png"
-                className="w-[125px] h-[125px]"
-                alt=""
-              />
-            </div>
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-1">
-                <h1 className="font-dmsans font-medium text-[16px] tracking-[0.2px]">
-                  TMA-2 Comfort Wireless{" "}
-                </h1>
-                <h1 className="font-dmsans font-extrabold text-sm tracking-[0.2px] ">
-                  USD 270
-                </h1>
-              </div>
-              <div className="flex flex-row justify-between w-full items-center">
-                <div className="flex gap-2.5 ">
-                  <div className="flex gap-[3px] ">
-                    <img src="src/assets/images/icons/star-filled.svg" alt="" />
-                    <h2 className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                      4.6
-                    </h2>
-                  </div>
-                  <span className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                    86 Reviews
-                  </span>
-                </div>
-                <Link to={"product-detail"}>
-                  <img src="src/assets/images/icons/more-vertical.svg" alt="" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-row gap-[15px]">
-          <div className="flex flex-col gap-5 px-2.5 py-[15px] bg-[#ffffff] rounded-3xl ">
-            <div className="flex items-center justify-center">
-              <img
-                src="src/assets/images/pict/headphone-small.png"
-                className="w-[125px] h-[125px]"
-                alt=""
-              />
-            </div>
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-1">
-                <h1 className="font-dmsans font-medium text-[16px] tracking-[0.2px]">
-                  TMA-2 Comfort Wireless{" "}
-                </h1>
-                <h1 className="font-dmsans font-extrabold text-sm tracking-[0.2px] ">
-                  USD 270
-                </h1>
-              </div>
-              <div className="flex flex-row justify-between w-full items-center">
-                <div className="flex gap-2.5 ">
-                  <div className="flex gap-[3px] ">
-                    <img src="src/assets/images/icons/star-filled.svg" alt="" />
-                    <h2 className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                      4.6
-                    </h2>
-                  </div>
-                  <span className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                    86 Reviews
-                  </span>
-                </div>
-                <Link to={"/search"}>
-                  <img src="src/assets/images/icons/more-vertical.svg" alt="" />
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 px-2.5 py-[15px] bg-[#ffffff] rounded-3xl ">
-            <div className="flex items-center justify-center">
-              <img
-                src="src/assets/images/pict/headphone-small.png"
-                className="w-[125px] h-[125px]"
-                alt=""
-              />
-            </div>
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-1">
-                <h1 className="font-dmsans font-medium text-[16px] tracking-[0.2px]">
-                  TMA-2 Comfort Wireless{" "}
-                </h1>
-                <h1 className="font-dmsans font-extrabold text-sm tracking-[0.2px] ">
-                  USD 270
-                </h1>
-              </div>
-              <div className="flex flex-row justify-between w-full items-center">
-                <div className="flex gap-2.5 ">
-                  <div className="flex gap-[3px] ">
-                    <img src="src/assets/images/icons/star-filled.svg" alt="" />
-                    <h2 className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                      4.6
-                    </h2>
-                  </div>
-                  <span className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                    86 Reviews
-                  </span>
-                </div>
-                <Link to={"/search"}>
-                  <img src="src/assets/images/icons/more-vertical.svg" alt="" />
-                </Link>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 

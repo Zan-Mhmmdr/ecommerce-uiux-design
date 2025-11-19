@@ -3,10 +3,8 @@ import back from "/src/assets/images/icons/chevron-left.svg";
 import trash from "/src/assets/images/icons/trash-2.svg";
 import add from "/src/assets/images/icons/+.svg";
 import min from "/src/assets/images/icons/-.svg";
-import headphone from "/src/assets/images/pict/headphone-small.png";
-import earphone from "/src/assets/images/pict/earphone.png";
 import proceed from "/src/assets/images/icons/chevron-right.svg";
-import { useCartStore } from "./store/useCartStore";
+import { useCartStore } from "../../store/useCartStore";
 
 const ShoppingCart = () => {
   const { items, increaseQty, decreaseQty } = useCartStore();
@@ -32,44 +30,15 @@ const ShoppingCart = () => {
           <div key={item.id}>
             <div className="flex gap-[15px]">
               <div className="bg-[#F6F6F6] p-2.5 rounded-2xl shrink-0">
-                <img src={headphone} className="size-25" alt="" />
+                <img src={item.image} className="size-25" alt="" />
               </div>
               <div className="flex flex-col place-content-between w-full">
                 <div className="flex flex-col gap-[5px] ">
                   <h1 className="font-dmsans text-[16px] tracking-[0.2px] ">
-                    TMA-2 Comfort Wireless{" "}
+                    {item.name}{" "}
                   </h1>
                   <h2 className="font-dmsans text-sm tracking-[0.2px] font-bold">
-                    USD 270
-                  </h2>
-                </div>
-                <div className="flex justify-between">
-                  <div className="flex flex-row  gap-[25px]">
-                    <button onClick={() => decreaseQty(item.id)}>
-                      <img src={add} alt="" />
-                    </button>
-                    <span>{item.qty}</span>
-                    <button onClick={() => increaseQty(item.id)}>
-                      <img src={min} alt="" />
-                    </button>
-                  </div>
-                  <button>
-                    <img src={trash} className="opacity-50" alt="" />
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-[15px] pt-8">
-              <div className="bg-[#F6F6F6] p-2.5 rounded-2xl shrink-0">
-                <img src={earphone} className="size-25" alt="" />
-              </div>
-              <div className="flex flex-col place-content-between w-full">
-                <div className="flex flex-col gap-[5px] ">
-                  <h1 className="font-dmsans text-[16px] tracking-[0.2px] ">
-                    C02 - Cable
-                  </h1>
-                  <h2 className="font-dmsans text-sm tracking-[0.2px] font-bold">
-                    USD 25
+                    USD {item.price}
                   </h2>
                 </div>
                 <div className="flex justify-between">
