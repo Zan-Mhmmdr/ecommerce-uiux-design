@@ -97,10 +97,10 @@ const ProductPage = () => {
                       </h2>
                     </div>
                     <span className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
-                      {product.reviews } Reviews
+                      {product.reviews} Reviews
                     </span>
                   </div>
-                  <Link to={"product-detail"}>
+                  <Link to={`product-detail/${product.id}`}>
                     <img
                       src="src/assets/images/icons/more-vertical.svg"
                       alt=""

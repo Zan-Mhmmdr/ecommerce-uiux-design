@@ -1,4 +1,3 @@
-import headset from "/src/assets/images/pict/headset.png";
 import headphonee from "/src/assets/images/pict/headphone.png";
 import kanade from "/src/assets/images/pict/kanade.jpeg";
 import akane from "/src/assets/images/pict/akane.jpg";
@@ -7,25 +6,41 @@ import earphone from "/src/assets/images/pict/earphone.png";
 import rating5 from "/src/assets/images/icons/rating-5.svg";
 import rating from "/src/assets/images/icons/Rating.svg";
 import { Link } from "react-router-dom";
+import type { Product } from "../../products/data/products";
+import { useCartStore } from "../../../store/useCartStore";
 
-const Overview = () => {
+interface OverviewProps {
+  product: Product;
+}
+
+const Overview = ({ product }: OverviewProps) => {
+  const { addItem } = useCartStore();
+
   return (
     <>
       <div className="flex flex-row overflow-x-auto no-scrollbar gap-5  pt-6">
         <div className="rounded-[10px] shrink-0 bg-[#F6F6F6]">
-          <img src={headset} className="w-[285px] h-[391px]" alt="headset" />
+          <img
+            src={product.image}
+            className="w-[285px] h-[391px]"
+            alt="headphone"
+          />
         </div>
         <div className="rounded-[10px] shrink-0 bg-[#F6F6F6]">
-          <img src={headset} className="w-[285px] h-[391px] " alt="12" />
+          <img src={product.image} className="w-[285px] h-[391px] " alt="12" />
         </div>
         <div className="rounded-[10px] shrink-0 bg-[#F6F6F6]">
-          <img src={headset} className="w-[285px] h-[391px]" alt="headset" />
+          <img
+            src={product.image}
+            className="w-[285px] h-[391px]"
+            alt="headset"
+          />
         </div>
       </div>
 
       <div className="pt-6">
         <Link to={"/*"} className="font-dmsans text-[16px] tracking-[0.2px]">
-          Review (172)
+          Review ({product.reviews})
         </Link>
         <div className="flex flex-col gap-[17px] pt-6 ">
           <div className="flex gap-[15px] ">
@@ -167,7 +182,18 @@ const Overview = () => {
       </div>
 
       <div className="flex fixed px-6 bottom-0 left-0 right-0 items-center bg-white justify-center pb-6">
-        <button className="w-full px-2.5 py-5 flex justify-center  gap-2.5 font-dmsans text-[16px] tracking-[0.2px] leading-5 text-[#FFFFFF] bg-[#0ACF83] rounded-[10px]">
+        <button
+          onClick={() =>
+            addItem({
+              id: product.id,
+              name: product.name,
+              price: product.price,
+              image: product.image,
+              qty: 1,
+            })
+          }
+          className="w-full px-2.5 py-5 flex justify-center  gap-2.5 font-dmsans text-[16px] tracking-[0.2px] leading-5 text-[#FFFFFF] bg-[#0ACF83] rounded-[10px]"
+        >
           Add To Cart
         </button>
       </div>

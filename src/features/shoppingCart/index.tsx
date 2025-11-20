@@ -7,7 +7,7 @@ import proceed from "/src/assets/images/icons/chevron-right.svg";
 import { useCartStore } from "../../store/useCartStore";
 
 const ShoppingCart = () => {
-  const { items, increaseQty, decreaseQty } = useCartStore();
+  const { items, increaseQty, decreaseQty, remove, clear } = useCartStore();
   console.log(items);
   return (
     <>
@@ -20,9 +20,9 @@ const ShoppingCart = () => {
           Shopping Cart
         </h1>
 
-        <Link to={"/home"}>
+        <button onClick={() => clear()}>
           <img src={trash} alt="" />
-        </Link>
+        </button>
       </div>
 
       <div className="flex flex-col px-6 gap-[35px] pt-10">
@@ -51,7 +51,7 @@ const ShoppingCart = () => {
                       <img src={min} alt="" />
                     </button>
                   </div>
-                  <button>
+                  <button onClick={() => remove(item.id)}>
                     <img src={trash} className="opacity-50" alt="" />
                   </button>
                 </div>
@@ -64,10 +64,10 @@ const ShoppingCart = () => {
       <div className="flex flex-col fixed bottom-0 left-0 right-0 items-center px-6 bg-white justify-center pb-5">
         <div className="flex justify-between w-full items-center py-5">
           <span className="font-dmsans font-bold text-[12px] opacity-60 tracking-[0.2px]">
-            Total 2 Items
+            {`Total (${items.length} items)`}
           </span>
           <span className="font-dmsans font-bold text-[16px] tracking-[0.2px]">
-            USD 295
+            USD {items.reduce((total, item) => total + item.price * item.qty, 0)}
           </span>
         </div>
         <button className="w-full px-[30px] items-center py-5 flex justify-between  gap-2.5 font-dmsans text-[16px] tracking-[0.2px] leading-5 text-[#FFFFFF] bg-[#0ACF83] rounded-[10px]">
