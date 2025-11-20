@@ -1,7 +1,15 @@
 import aptx from "/src/assets/images/pict/aptx-audio.png";
 import alcantara from "/src/assets/images/pict/alcantara.png";
+import type { Product } from "../../products/data/products";
+import { useCartStore } from "../../../store/useCartStore";
 
-const Features = () => {
+interface OverviewProps {
+  product: Product;
+}
+
+const Features = ({ product }: OverviewProps) => {
+  const addItem = useCartStore((state) => state.addItem);
+
   return (
     <>
       <div className="flex flex-col gap-6 pt-6">
@@ -31,7 +39,7 @@ const Features = () => {
           </div>
           <div className="flex flex-col  justify-between h-full gap-2">
             <h1 className="font-dmsans font-bold text-[16px] tracking-[0.2px] leading-6">
-              APTX HD WIRELESS <br /> AUDIO
+              {product?.name} SUPPORTS APTX® HD AUDIO
             </h1>
             <p className="font-dmsans text-sm tracking-[0.2px] leading-5">
               The Aptx® HD codec transmits 24-bit hi-res audio, equal to or
@@ -55,7 +63,18 @@ const Features = () => {
         </div>
 
         <div className="flex items-center justify-center py-8">
-          <button className="w-full px-2.5 py-5 flex justify-center  gap-2.5 font-dmsans text-[16px] tracking-[0.2px] leading-5 text-[#FFFFFF] bg-[#0ACF83] rounded-[10px]">
+          <button
+            onClick={() =>
+              addItem({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                qty: 1,
+              })
+            }
+            className="w-full px-2.5 py-5 flex justify-center  gap-2.5 font-dmsans text-[16px] tracking-[0.2px] leading-5 text-[#FFFFFF] bg-[#0ACF83] rounded-[10px]"
+          >
             Add To Cart
           </button>
         </div>

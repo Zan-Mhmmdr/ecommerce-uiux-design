@@ -26,7 +26,7 @@ createRoot(document.getElementById("root")!).render(
 
         <Route path="products">
           <Route index element={<ProductPage />} />
-          <Route path="product-detail" element={<ProductDetail />} />
+          <Route path="product-detail/:id" element={<ProductDetail />} />
         </Route>
 
         <Route path="/shopping-cart" element={<ShoppingCart />} />
