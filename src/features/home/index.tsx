@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
 import { useCartStore } from "../../store/useCartStore";
+import { useState } from "react";
 
 const HomePage = () => {
   const { items } = useCartStore();
+  const [activateTab, setActivateTab] = useState<string>("headphone");
+
+  const tabs = [
+    { id: "headphone", label: "Headphone" },
+    { id: "headband", label: "Headband" },
+    { id: "Earpads", label: "Earpads" },
+    { id: "speaker", label: "Speaker" },
+    { id: "headset", label: "Headset" },
+    { id: "watch", label: "Watch" },
+  ];
 
   return (
     <>
@@ -52,24 +63,19 @@ const HomePage = () => {
       </div>
       <div className="flex flex-col gap-5 pt-8 pb-6 rounded-3xl px-6 bg-[#F6F6F6] ">
         <div className="flex flex-row gap-[11px] overflow-x-auto no-scrollbar">
-          <button className="px-[15px] flex items-center rounded-3xl py-1 bg-[#0ACF83] cursor-pointer text-[#ffffff] text-[11px] font-dmsans tracking-[0.2px]">
-            Headphone
-          </button>
-          <button className="px-[15px] flex items-center rounded-3xl py-1 cursor-pointer text-[#7F7F7F] text-[11px] font-dmsans tracking-[0.2px]">
-            Headband
-          </button>
-          <button className="px-[15px] flex items-center rounded-3xl py-1 cursor-pointer text-[#7F7F7F] text-[11px] font-dmsans tracking-[0.2px]">
-            Earpads
-          </button>
-          <button className="px-[15px] flex items-center rounded-3xl py-1 cursor-pointer text-[#7F7F7F] text-[11px] font-dmsans tracking-[0.2px]">
-            Speaker
-          </button>
-          <button className="px-[15px] flex items-center rounded-3xl py-1 cursor-pointer text-[#7F7F7F] text-[11px] font-dmsans tracking-[0.2px]">
-            Headset
-          </button>
-          <button className="px-[15px] flex items-center rounded-3xl py-1 cursor-pointer text-[#7F7F7F] text-[11px] font-dmsans tracking-[0.2px]">
-            Watch
-          </button>
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActivateTab(tab.id)}
+              className={`px-[15px] flex items-center rounded-3xl py-1  cursor-pointer text-[#ffffff] text-[11px] font-dmsans tracking-[0.2px] transition-all duration-300 ${
+                activateTab === tab.id
+                  ? "bg-[#0ACF83]"
+                  : "bg-transparent text-black  "
+              } `}
+            >
+              {tab.label  }
+            </button>
+          ))}
         </div>
         <div className="flex flex-row  bg-white rounded-2xl  gap-[15px] px-6 mt-5">
           <div className="flex flex-row gap-2.5 py-5 ">
