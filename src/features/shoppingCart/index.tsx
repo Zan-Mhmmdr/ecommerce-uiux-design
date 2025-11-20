@@ -67,8 +67,9 @@ const ShoppingCart = () => {
             {`Total (${items.length} items)`}
           </span>
           <span className="font-dmsans font-bold text-[16px] tracking-[0.2px]">
-            USD {items.reduce((total, item) => total + item.price * item.qty, 0)}
-          </span>
+            USD{" "}
+            {items.reduce((total, item) => total + item.price * item.qty, 0)}
+          </span> 
         </div>
         <button className="w-full px-[30px] items-center py-5 flex justify-between  gap-2.5 font-dmsans text-[16px] tracking-[0.2px] leading-5 text-[#FFFFFF] bg-[#0ACF83] rounded-[10px]">
           <p className="font-dmsans font-semibold text-sm tracking-[0.7px]">
