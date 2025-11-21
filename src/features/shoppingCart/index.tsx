@@ -11,7 +11,7 @@ const ShoppingCart = () => {
   console.log(items);
   return (
     <>
-      <div className="flex px-6 pt-[55px] justify-between">
+      <div className="flex px-6 pt-[55px] pb-5 justify-between fixed top-0 left-0 w-full bg-white z-50">
         <Link to={"/"}>
           <img src={back} alt="" />
         </Link>
@@ -25,7 +25,7 @@ const ShoppingCart = () => {
         </button>
       </div>
 
-      <div className="flex flex-col px-6 gap-[35px] pt-10">
+      <div className="flex flex-col px-6 gap-[35px] overflow-y-hidden pb-[150px] pt-30">
         {items.map((item) => (
           <div key={item.id}>
             <div className="flex gap-[15px]">
@@ -69,7 +69,7 @@ const ShoppingCart = () => {
           <span className="font-dmsans font-bold text-[16px] tracking-[0.2px]">
             USD{" "}
             {items.reduce((total, item) => total + item.price * item.qty, 0)}
-          </span> 
+          </span>
         </div>
         <button className="w-full px-[30px] items-center py-5 flex justify-between  gap-2.5 font-dmsans text-[16px] tracking-[0.2px] leading-5 text-[#FFFFFF] bg-[#0ACF83] rounded-[10px]">
           <p className="font-dmsans font-semibold text-sm tracking-[0.7px]">
