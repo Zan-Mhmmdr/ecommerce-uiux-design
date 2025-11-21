@@ -4,10 +4,33 @@ import { products } from "./data/products";
 
 const ProductPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activateTab, setActivateTab] = useState<string>("headphone");
+  const [activateSortBy, setActivateSortBy] = useState<string>("newest");
+  const [activateSortBy2, setActivateSortBy2] = useState<string>("high-price");
+
+  const tabs = [
+    { id: "headphone", label: "Headphone" },
+    { id: "headband", label: "Headband" },
+    { id: "earpads", label: "Earpads" },
+    { id: "speaker", label: "Speaker" },
+    { id: "headset", label: "Headset" },
+    { id: "watch", label: "Watch" },
+  ];
+
+  const sortByTabs = [
+    { id: "popularity", label: "Popularity" },
+    { id: "newest", label: "Newest" },
+  ];
+
+  const sortByTabs2 = [
+    { id: "high-price", label: "High Price" },
+    { id: "low-price", label: "Low Price" },
+    { id: "review", label: "Review" },
+  ];
 
   return (
     <>
-      <div className="pt-[55px] px-6 flex justify-between">
+      <div className="flex px-6 pt-[55px] pb-5 justify-between fixed top-0 left-0 w-full bg-white z-50">
         <Link to="/home">
           <img src="src/assets/images/icons/chevron-left.svg" alt="Back" />
         </Link>
@@ -50,18 +73,7 @@ const ProductPage = () => {
           >
             Most Experience
           </Link>
-          <Link
-            to={"/products"}
-            className="font-dmsans text-sm tracking-[0.2px]"
-          >
-            Most Experience
-          </Link>
-          <Link
-            to={"/products"}
-            className="font-dmsans text-sm tracking-[0.2px]"
-          >
-            Most Experience
-          </Link>
+         
         </div>
       </div>
 
@@ -129,18 +141,19 @@ const ProductPage = () => {
                 Category
               </h1>
               <div className="flex flex-row gap-[11px] overflow-x-auto no-scrollbar">
-                <button className="px-[15px] flex items-center rounded-3xl py-1 bg-[#0ACF83] cursor-pointer text-[#ffffff] text-[11px] font-dmsans tracking-[0.2px]">
-                  Headphone
-                </button>
-                <button className="px-[15px] flex items-center rounded-3xl py-1 cursor-pointer text-[#7F7F7F] text-[11px] font-dmsans tracking-[0.2px]">
-                  Headband
-                </button>
-                <button className="px-[15px] flex items-center rounded-3xl py-1 cursor-pointer text-[#7F7F7F] text-[11px] font-dmsans tracking-[0.2px]">
-                  Earpads
-                </button>
-                <button className="px-[15px] flex items-center rounded-3xl py-1 cursor-pointer text-[#7F7F7F] text-[11px] font-dmsans tracking-[0.2px]">
-                  Speaker
-                </button>
+                {tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActivateTab(tab.id)}
+                    className={`px-[15px] flex items-center rounded-3xl py-1  cursor-pointer text-[#ffffff] text-[11px] font-dmsans tracking-[0.2px] transition-all duration-300 ${
+                      activateTab === tab.id
+                        ? "bg-[#0ACF83]"
+                        : "bg-transparent text-black  "
+                    } `}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
               </div>
             </div>
             <div className="flex gap-2.5 flex-col">
@@ -148,27 +161,36 @@ const ProductPage = () => {
                 Sort By
               </h1>
               <div className="flex flex-col gap-3">
-                <div className="flex gap-3 ">
-                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#0ACF83] cursor-pointer leading-5 text-[#ffffff] text-sm font-dmsans tracking-[0.2px]">
-                    Popularity{" "}
-                  </button>
-                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#fffff] cursor-pointer leading-5 text-black outline-2 outline-[#7F7F7F] text-sm font-dmsans tracking-[0.2px]">
-                    Newest{" "}
-                  </button>
-                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#fffff] cursor-pointer leading-5 text-black outline-2 outline-[#7F7F7F] text-sm font-dmsans tracking-[0.2px]">
-                    Oldest{" "}
-                  </button>
+                <div className="flex gap-3 flex-row">
+                  {sortByTabs.map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActivateSortBy(tab.id)}
+                      className={`px-[15px] h-[35px] py-5 flex items-center rounded-2xl transition-all duration-300 bg-[#0ACF83] cursor-pointer leading-5 text-[#ffffff] text-sm font-dmsans tracking-[0.2px] ${
+                        activateSortBy === tab.id
+                          ? "bg-[#0ACF83]"
+                          : "bg-transparent text-black outline-2 outline-[#7F7F7F]"
+                      }`}
+                    >
+                      {tab.label}{" "}
+                    </button>
+                  ))}
                 </div>
+
                 <div className="flex gap-3 ">
-                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#fffff] cursor-pointer leading-5 text-black outline-2 outline-[#7F7F7F] text-sm font-dmsans tracking-[0.2px]">
-                    High Price{" "}
-                  </button>
-                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#fffff] cursor-pointer leading-5 text-black outline-2 outline-[#7F7F7F] text-sm font-dmsans tracking-[0.2px]">
-                    Low Price{" "}
-                  </button>
-                  <button className="px-[15px] h-[35px] py-5 flex items-center rounded-2xl bg-[#fffff] cursor-pointer leading-5 text-black outline-2 outline-[#7F7F7F] text-sm font-dmsans tracking-[0.2px]">
-                    Review{" "}
-                  </button>
+                  {sortByTabs2.map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActivateSortBy2(tab.id)}
+                      className={`px-[15px] h-[35px] py-5 flex items-center rounded-2xl transition-all duration-300 bg-[#0ACF83] cursor-pointer leading-5 text-[#ffffff] text-sm font-dmsans tracking-[0.2px] ${
+                        activateSortBy2 === tab.id
+                          ? "bg-[#0ACF83]"
+                          : "bg-transparent text-black outline-2 outline-[#7F7F7F]"
+                      }`}
+                    >
+                      {tab.label}{" "}
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>

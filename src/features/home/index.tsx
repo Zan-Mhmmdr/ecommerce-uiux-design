@@ -10,7 +10,7 @@ const HomePage = () => {
   const tabs = [
     { id: "headphone", label: "Headphone" },
     { id: "headband", label: "Headband" },
-    { id: "Earpads", label: "Earpads" },
+    { id: "earpads", label: "Earpads" },
     { id: "speaker", label: "Speaker" },
     { id: "headset", label: "Headset" },
     { id: "watch", label: "Watch" },

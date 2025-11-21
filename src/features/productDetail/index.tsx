@@ -22,7 +22,7 @@ const ProductDetail = () => {
   return (
     <>
       <div className="bg-[#ffffff] px-6">
-        <div className="pt-[55px] flex justify-between">
+        <div className="flex px-6 pt-[55px] pb-5 justify-between fixed top-0 left-0 w-full bg-white z-50">
           <Link to="/products">
             <img src={chevronLeft} alt="Back" />
           </Link>
@@ -31,7 +31,7 @@ const ProductDetail = () => {
           </Link>
         </div>
 
-        <div className="flex flex-col gap-1.5 pt-7">
+        <div className="flex flex-col gap-1.5 pt-26 ">
           <h1 className="font-bold font-dmsans text-[16px] text-[#0ACF83] tracking-[0.2px]">
             USD {product?.price}
           </h1>

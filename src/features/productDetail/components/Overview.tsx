@@ -18,7 +18,7 @@ const Overview = ({ product }: OverviewProps) => {
 
   return (
     <>
-      <div className="flex flex-row overflow-x-auto no-scrollbar gap-5  pt-6">
+      <div className="flex flex-row overflow-x-auto no-scrollbar gap-5   pt-6">
         <div className="rounded-[10px] shrink-0 bg-[#F6F6F6]">
           <img
             src={product.image}
