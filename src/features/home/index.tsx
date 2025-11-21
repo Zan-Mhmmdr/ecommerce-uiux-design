@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { useCartStore } from "../../store/useCartStore";
 import { useState } from "react";
-
+import { products } from "../products/data/products";
 const HomePage = () => {
-  const { items } = useCartStore();
   const [activateTab, setActivateTab] = useState<string>("headphone");
+
+  const filteredItems = products.filter((p) => p.category === activateTab);
+  console.log(filteredItems);
 
   const tabs = [
     { id: "headphone", label: "Headphone" },
@@ -73,7 +74,7 @@ const HomePage = () => {
                   : "bg-transparent text-black  "
               } `}
             >
-              {tab.label  }
+              {tab.label}
             </button>
           ))}
         </div>
@@ -114,14 +115,14 @@ const HomePage = () => {
           </Link>
         </div>
         <div className="flex flex-row gap-[15px]  overflow-x-auto  scrollbar-hide ">
-          {items.map((item) => (
+          {filteredItems.map((item) => (
             <Link
-              to={"/shopping-cart"}
+              to={`/products/product-detail/${item.id}`}
               className="bg-[#ffffff] shrink-0 flex flex-col w-[155px] rounded-2xl items-center px-2.5 pt-[15px] gap-5"
             >
               <img src={item.image} className="h-[145px]" alt="" />
-              <div className="flex flex-col gap-0.5 pb-3">
-                <h2 className="font-dmsans tracking-[0.2px] text-sm">
+              <div className="flex flex-col w-full gap-0.5 pb-3">
+                <h2 className="font-dmsans  tracking-[0.2px] text-sm">
                   {item.name}
                 </h2>
                 <h3 className="font-dmsans font-bold tracking-[0.2px] text-[12px]">
