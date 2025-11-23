@@ -74,15 +74,14 @@ const SearchPage = () => {
         <h1 className="font-dmsans text-[16px] tracking-[0.2px] leading-5">
           Popular product
         </h1>
-        <div className="flex flex-col gap-[25px]">
+        <div className="flex flex-col pt-10 gap-[25px]">
+          {filteredProducts.length === 0 && (
+            <p className="text-center text-gray-500">No products found</p>
+          )}
           {filteredProducts.map((product) => (
             <div key={product.id} className="flex flex-row gap-[15px] pb-10">
               <div className="bg-[#F6F6F6] rounded-2xl p-2.5">
-                <img
-                  src={product.image}
-                  className="w-20"
-                  alt=""
-                />
+                <img src={product.image} className="w-20" alt="" />
               </div>
               <div className="flex flex-col items-start justify-between w-full">
                 <div className="flex flex-col gap-[5px] ">
