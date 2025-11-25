@@ -40,6 +40,11 @@ const SearchPage = () => {
             type="text"
             value={inputQuery}
             onChange={(e) => setInputQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                setSearchQuery(inputQuery);
+              }
+            }}
             placeholder="Search Handphone"
             className="w-full h-[45px] pl-10 pr-4 py-1 font-dmsans text-[12px] font-bold tracking-[0.2px] leading-5 border border-[#BABABA] text-[#2D2D2D] placeholder-[#BABABA] rounded-lg bg-white outline-none"
           />
@@ -62,13 +67,11 @@ const SearchPage = () => {
                   {query}
                 </span>
               </button>
-              <div>
-                <img src="src/assets/images/icons/x.svg" alt="" />
-              </div>
+
+              <button onClick={() => clearSearch()} className="self-end">
+                <img src="src/assets/images/icons/x.svg" alt="remove" />
+              </button>
             </div>
-            <button onClick={() => clearSearch()} className="self-end">
-              <img src="src/assets/images/icons/x.svg" alt="remove" />
-            </button>
           </div>
         ))}
       </div>
