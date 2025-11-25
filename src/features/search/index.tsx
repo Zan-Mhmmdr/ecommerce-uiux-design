@@ -5,7 +5,7 @@ import { useSearchStore } from "../../store/useSearchStore";
 
 const SearchPage = () => {
   const [inputQuery, setInputQuery] = useState("");
-  const { searchHistory, setSearchQuery, clearSearch } = useSearchStore();
+  const { searchHistory, addSearchHistory, removeSearchHistory } = useSearchStore();
 
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(inputQuery.toLowerCase())
@@ -42,7 +42,7 @@ const SearchPage = () => {
             onChange={(e) => setInputQuery(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
-                setSearchQuery(inputQuery);
+                addSearchHistory(inputQuery);
               }
             }}
             placeholder="Search Handphone"
@@ -68,7 +68,7 @@ const SearchPage = () => {
                 </span>
               </button>
 
-              <button onClick={() => clearSearch()} className="self-end">
+              <button onClick={() => removeSearchHistory(query)} className="self-end">
                 <img src="src/assets/images/icons/x.svg" alt="remove" />
               </button>
             </div>
