@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../products/data/products";
+import { useSearchStore } from "../../store/useSearchStore";
 
 const SearchPage = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [inputQuery, setInputQuery] = useState("");
+  const { searchHistory, setSearchQuery, clearSearch } = useSearchStore();
 
   const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    product.name.toLowerCase().includes(inputQuery.toLowerCase())
   );
 
   console.log(filteredProducts);
@@ -36,8 +38,8 @@ const SearchPage = () => {
 
           <input
             type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            value={inputQuery}
+            onChange={(e) => setInputQuery(e.target.value)}
             placeholder="Search Handphone"
             className="w-full h-[45px] pl-10 pr-4 py-1 font-dmsans text-[12px] font-bold tracking-[0.2px] leading-5 border border-[#BABABA] text-[#2D2D2D] placeholder-[#BABABA] rounded-lg bg-white outline-none"
           />
@@ -45,30 +47,30 @@ const SearchPage = () => {
       </div>
       <div className="flex flex-col px-6 gap-5 ">
         <h2>Lastest search</h2>
-        <div className="flex flex-col gap-[25px] ">
-          <div className="flex justify-between">
-            <div className="flex gap-2.5">
-              <img src="src/assets/images/icons/clock.svg" alt="" />
-              <span className="font-dmsans text-sm tracking-[0.2px]">
-                Headphone
-              </span>
+        {searchHistory.length === 0 && (
+          <p className="text-center text-gray-500">No search history</p>
+        )}{" "}
+        {searchHistory.map((query, index) => (
+          <div key={index} className="flex flex-col gap-[25px] ">
+            <div className="flex justify-between">
+              <button
+                onClick={() => setInputQuery(query)}
+                className="flex gap-2.5"
+              >
+                <img src="src/assets/images/icons/clock.svg" alt="" />
+                <span className="font-dmsans text-sm tracking-[0.2px]">
+                  {query}
+                </span>
+              </button>
+              <div>
+                <img src="src/assets/images/icons/x.svg" alt="" />
+              </div>
             </div>
-            <div>
-              <img src="src/assets/images/icons/x.svg" alt="" />
-            </div>
+            <button onClick={() => clearSearch()} className="self-end">
+              <img src="src/assets/images/icons/x.svg" alt="remove" />
+            </button>
           </div>
-          <div className="flex justify-between">
-            <div className="flex gap-2.5">
-              <img src="src/assets/images/icons/clock.svg" alt="" />
-              <span className="font-dmsans text-sm tracking-[0.2px]">
-                Cable
-              </span>
-            </div>
-            <div>
-              <img src="src/assets/images/icons/x.svg" alt="" />
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
       <div className="flex gap-5 flex-col px-6 pt-6">
         <h1 className="font-dmsans text-[16px] tracking-[0.2px] leading-5">
