@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { products } from "../products/data/products";
 const HomePage = () => {
   const [activateTab, setActivateTab] = useState<string>("headphone");
+  const navigate = useNavigate();
 
   const filteredItems = products.filter((p) => p.category === activateTab);
   console.log(filteredItems);
@@ -57,6 +58,7 @@ const HomePage = () => {
 
           <input
             type="text"
+            onFocus={() => navigate('/search')}
             placeholder="Search Handphone"
             className="w-full h-[45px] pl-10 pr-4 py-1 font-dmsans text-[12px] font-bold tracking-[0.2px] leading-5 border border-[#BABABA] text-[#2D2D2D] placeholder-[#BABABA] rounded-lg bg-white outline-none"
           />
