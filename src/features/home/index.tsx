@@ -21,10 +21,10 @@ const HomePage = () => {
     <>
       <div className=" flex flex-row justify-between bg-[#ffffff] pt-[50px] px-6 items-center">
         <a href="">
-          <img src="public/images/icons/menu-variant.svg" alt="" />
+          <img src="/images/icons/menu-variant.svg" alt="" />
         </a>
         <div className="flex gap-[7.14px]">
-          <img src="public/images/icons/audio.svg" alt="" />
+          <img src="/images/icons/audio.svg" alt="" />
           <h2 className="font-semibold font-dmsans text-[19px] tracking-[0.24px]">
             Audio
           </h2>
@@ -32,7 +32,7 @@ const HomePage = () => {
 
         <Link to={"/profile"}>
           <img
-            src="public/images/icons/ado.png"
+            src="/images/icons/ado.png"
             className="w-[35px] rounded-full"
             alt=""
           />
@@ -50,7 +50,7 @@ const HomePage = () => {
         <div className="relative">
           <span className="absolute inset-y-0 left-0 flex items-center pl-3">
             <img
-              src="public/images/icons/search.svg"
+              src="/images/icons/search.svg"
               alt="icon"
               className="w-5 h-5 text-[#BABABA]"
             />
@@ -58,7 +58,7 @@ const HomePage = () => {
 
           <input
             type="text"
-            onFocus={() => navigate('/search')}
+            onFocus={() => navigate("/search")}
             placeholder="Search Handphone"
             className="w-full h-[45px] pl-10 pr-4 py-1 font-dmsans text-[12px] font-bold tracking-[0.2px] leading-5 border border-[#BABABA] text-[#2D2D2D] placeholder-[#BABABA] rounded-lg bg-white outline-none"
           />
@@ -88,17 +88,17 @@ const HomePage = () => {
               </h1>
               <div className="flex items-center gap-3">
                 <Link
-                to={"/products"}
+                  to={"/products"}
                   className="font-dmsans text-sm font-semibold tracking-[0.2px] text-[#0ACF83]"
                 >
                   Shop now
                 </Link>
-                <img src="public/images/icons/arrow-right.svg" alt="" />
+                <img src="/images/icons/arrow-right.svg" alt="" />
               </div>
             </div>
             <div className="flex items-center">
               <img
-                src="public/images/pict/headphone.png"
+                src="/images/pict/headphone.png"
                 alt=""
                 className="w-full h-full object-contain"
               />
