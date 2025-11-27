@@ -16,7 +16,7 @@ const SearchPage = () => {
 
   return (
     <>
-      <div className="flex justify-between px-6 bg-white pt-[50px] ">
+      <div className="flex justify-between px-6 bg-white ">
         <Link to="/home">
           <img src="/images/icons/chevron-left.svg" alt="Back" />
         </Link>

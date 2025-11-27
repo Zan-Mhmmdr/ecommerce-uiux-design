@@ -5,7 +5,7 @@ import reigen from "/images/pict/reigen.png";
 const Profile = () => {
   return (
     <>
-      <div className="flex px-6 pt-[55px] items-center">
+      <div className="flex px-6 items-center">
         <Link to={"/"}>
           <img src={back} alt="" />
         </Link>

@@ -22,7 +22,7 @@ const ProductDetail = () => {
   return (
     <>
       <div className="bg-[#ffffff] px-6">
-        <div className="flex px-6 pt-[55px] pb-5 justify-between fixed top-0 left-0 w-full bg-white z-50">
+        <div className="flex px-6 pb-5 justify-between fixed top-0 left-0 w-full bg-white z-50">
           <Link to="/products">
             <img src={chevronLeft} alt="Back" />
           </Link>

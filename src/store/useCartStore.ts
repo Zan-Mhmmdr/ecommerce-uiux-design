@@ -24,14 +24,14 @@ export const useCartStore = create<CartState>((set) => ({
       name: "TMA-2 Comfort Wireless",
       price: 270,
       qty: 1,
-      image: "/src/assets/images/pict/headphone-small.png",
+      image: "/images/pict/headphone-small.png",
     },
     {
       id: 2,
       name: " C02 - Cable",
       price: 25,
       qty: 1,
-      image: "/src/assets/images/pict/earphone.png",
+      image: "/images/pict/earphone.png",
     },
   ],
 
