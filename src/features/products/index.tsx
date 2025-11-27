@@ -32,10 +32,10 @@ const ProductPage = () => {
     <>
       <div className="flex px-6 pt-[55px] pb-5 justify-between fixed top-0 left-0 w-full bg-white z-50">
         <Link to="/home">
-          <img src="src/assets/images/icons/chevron-left.svg" alt="Back" />
+          <img src="/images/icons/chevron-left.svg" alt="Back" />
         </Link>
         <Link to="/shopping-cart">
-          <img src="src/assets/images/icons/shopping-cart.svg" alt="Cart" />
+          <img src="/images/icons/shopping-cart.svg" alt="Cart" />
         </Link>
       </div>
       <div className="flex flex-col px-6 gap-[11px] py-6">
@@ -51,7 +51,7 @@ const ProductPage = () => {
           onClick={() => setIsModalOpen(true)}
           className="flex shrink-0 gap-2 px-[15px] py-2.5 rounded-2xl outline-2 outline-[#BABABA]"
         >
-          <img src="src/assets/images/icons/sliders.svg" alt="" />
+          <img src="/images/icons/sliders.svg" alt="" />
           <h1 className="font-dmsans text-sm tracking-[0.2px]">Filter</h1>
         </button>
         <div className="flex flex-row gap-[25px] items-center shrink-0 ">
@@ -73,7 +73,6 @@ const ProductPage = () => {
           >
             Most Experience
           </Link>
-         
         </div>
       </div>
 
@@ -100,10 +99,7 @@ const ProductPage = () => {
                 <div className="flex flex-row justify-between w-full items-center">
                   <div className="flex gap-2.5 ">
                     <div className="flex gap-[3px] ">
-                      <img
-                        src="src/assets/images/icons/star-filled.svg"
-                        alt=""
-                      />
+                      <img src="/images/icons/star-filled.svg" alt="" />
                       <h2 className="font-dmsans text-[12px] tracking-[0.2px] font-medium">
                         {product.rating}
                       </h2>
@@ -113,10 +109,7 @@ const ProductPage = () => {
                     </span>
                   </div>
                   <Link to={`product-detail/${product.id}`}>
-                    <img
-                      src="src/assets/images/icons/more-vertical.svg"
-                      alt=""
-                    />
+                    <img src="/images/icons/more-vertical.svg" alt="" />
                   </Link>
                 </div>
               </div>
@@ -133,7 +126,7 @@ const ProductPage = () => {
                 Filter
               </h1>
               <button onClick={() => setIsModalOpen(false)}>
-                <img src="src/assets/x-2.svg" alt="" />
+                <img src="/images/x-2.svg" alt="" />
               </button>
             </div>
             <div className="flex gap-2.5 flex-col">

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import back from "/src/assets/images/icons/chevron-left.svg";
-import reigen from "/src/assets/images/pict/reigen.png";
+import back from "/images/icons/chevron-left.svg";
+import reigen from "/images/pict/reigen.png";
 
 const Profile = () => {
   return (

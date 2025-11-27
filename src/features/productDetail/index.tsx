@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
-import chevronLeft from "/src/assets/images/icons/chevron-left.svg";
-import shoppingCart from "/src/assets/images/icons/shopping-cart.svg";
+import chevronLeft from "/images/icons/chevron-left.svg";
+import shoppingCart from "/images/icons/shopping-cart.svg";
 import { useState } from "react";
 import Overview from "./components/Overview";
 import Features from "./components/Features";
@@ -51,7 +51,7 @@ const ProductDetail = () => {
                 {tab.label}
               </h1>
               <div
-                className={`h-1 mt-2  rounded-full transition-all duration-300 ${
+                className={`h-1 mt-2 rounded-full transition-all duration-300 ${
                   activeTab === tab.id
                     ? "w-8 bg-[#0ACF83]"
                     : "w-0 bg-transparent"

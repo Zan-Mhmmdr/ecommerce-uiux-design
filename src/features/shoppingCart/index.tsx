@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import back from "/src/assets/images/icons/chevron-left.svg";
-import trash from "/src/assets/images/icons/trash-2.svg";
-import add from "/src/assets/images/icons/+.svg";
-import min from "/src/assets/images/icons/-.svg";
-import proceed from "/src/assets/images/icons/chevron-right.svg";
+import back from "/images/icons/chevron-left.svg";
+import trash from "/images/icons/trash-2.svg";
+import add from "/images/icons/+.svg";
+import min from "/images/icons/-.svg";
+import proceed from "/images/icons/chevron-right.svg";
 import { useCartStore } from "../../store/useCartStore";
 
 const ShoppingCart = () => {
