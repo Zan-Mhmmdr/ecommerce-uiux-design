@@ -15,7 +15,7 @@ export const products: Product[] = [
     price: 270,
     rating: 4.6,
     reviews: 86,
-    image: "/public/images/pict/headphone-small.png",
+    image: "/images/pict/headphone-small.png",
     category: "headphone",
   },
   {
@@ -24,7 +24,7 @@ export const products: Product[] = [
     price: 250,
     rating: 4.5,
     reviews: 71,
-    image: "/public/images/pict/earphone.png",
+    image: "/images/pict/earphone.png",
     category: "earphone",
   },
   {
@@ -33,7 +33,7 @@ export const products: Product[] = [
     price: 100,
     rating: 4.7,
     reviews: 34,
-    image: "/public/images/pict/headband1.jpg",
+    image: "/images/pict/headband1.jpg",
     category: "headband",
   },
   {
@@ -42,7 +42,7 @@ export const products: Product[] = [
     price: 25,
     rating: 4.7,
     reviews: 34,
-    image: "/public/images/pict/headband2.jpg",
+    image: "/images/pict/headband2.jpg",
     category: "headband",
   },
   {
@@ -51,7 +51,7 @@ export const products: Product[] = [
     price: 25,
     rating: 4.7,
     reviews: 12,
-    image: "/public/images/pict/headband3.jpg",
+    image: "/images/pict/headband3.jpg",
     category: "headband",
   },
   {
@@ -60,7 +60,7 @@ export const products: Product[] = [
     price: 40,
     rating: 4.5,
     reviews: 22,
-    image: "/public/images/pict/earpads1.jpg",
+    image: "/images/pict/earpads1.jpg",
     category: "earpads",
   },
   {
@@ -69,7 +69,7 @@ export const products: Product[] = [
     price: 40,
     rating: 4.5,
     reviews: 22,
-    image: "/public/images/pict/earpads2.jpg",
+    image: "/images/pict/earpads2.jpg",
     category: "earpads",
   },
   {
@@ -78,7 +78,7 @@ export const products: Product[] = [
     price: 40,
     rating: 4.5,
     reviews: 22,
-    image: "/public/images/pict/earpads3.jpg",
+    image: "/images/pict/earpads3.jpg",
     category: "earpads",
   },
   {
@@ -87,7 +87,7 @@ export const products: Product[] = [
     price: 40,
     rating: 4.5,
     reviews: 22,
-    image: "/public/images/pict/headphone-sony.webp",
+    image: "/images/pict/headphone-sony.webp",
     category: "headphone",
   },
   {
@@ -96,7 +96,7 @@ export const products: Product[] = [
     price: 40,
     rating: 4.5,
     reviews: 22,
-    image: "/public/images/pict/headphone-sony2.webp",
+    image: "/images/pict/headphone-sony2.webp",
     category: "headphone",
   },
   {
@@ -105,7 +105,7 @@ export const products: Product[] = [
     price: 40,
     rating: 4.5,
     reviews: 22,
-    image: "/public/images/pict/speaker3.webp",
+    image: "/images/pict/speaker3.webp",
     category: "speaker",
   },
   {
@@ -114,7 +114,7 @@ export const products: Product[] = [
     price: 40,
     rating: 4.5,
     reviews: 22,
-    image: "/public/images/pict/speaker.jpg",
+    image: "/images/pict/speaker.jpg",
     category: "speaker",
   },
   {
@@ -123,7 +123,7 @@ export const products: Product[] = [
     price: 40,
     rating: 4.5,
     reviews: 22,
-    image: "/public/images/pict/speaker2.jpg",
+    image: "/images/pict/speaker2.jpg",
     category: "speaker",
   },
 ];
