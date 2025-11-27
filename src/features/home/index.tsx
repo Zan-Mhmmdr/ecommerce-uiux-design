@@ -21,10 +21,10 @@ const HomePage = () => {
     <>
       <div className=" flex flex-row justify-between bg-[#ffffff] pt-[50px] px-6 items-center">
         <a href="">
-          <img src="src/assets/images/icons/menu-variant.svg" alt="" />
+          <img src="public/images/icons/menu-variant.svg" alt="" />
         </a>
         <div className="flex gap-[7.14px]">
-          <img src="src/assets/images/icons/audio.svg" alt="" />
+          <img src="public/images/icons/audio.svg" alt="" />
           <h2 className="font-semibold font-dmsans text-[19px] tracking-[0.24px]">
             Audio
           </h2>
@@ -32,7 +32,7 @@ const HomePage = () => {
 
         <Link to={"/profile"}>
           <img
-            src="src/assets/images/icons/ado.png"
+            src="public/images/icons/ado.png"
             className="w-[35px] rounded-full"
             alt=""
           />
@@ -50,7 +50,7 @@ const HomePage = () => {
         <div className="relative">
           <span className="absolute inset-y-0 left-0 flex items-center pl-3">
             <img
-              src="/src/assets/images/icons/search.svg"
+              src="public/images/icons/search.svg"
               alt="icon"
               className="w-5 h-5 text-[#BABABA]"
             />
@@ -88,17 +88,17 @@ const HomePage = () => {
               </h1>
               <div className="flex items-center gap-3">
                 <Link
-                  to={"/search"}
+                to={"/products"}
                   className="font-dmsans text-sm font-semibold tracking-[0.2px] text-[#0ACF83]"
                 >
                   Shop now
                 </Link>
-                <img src="src/assets/images/icons/arrow-right.svg" alt="" />
+                <img src="public/images/icons/arrow-right.svg" alt="" />
               </div>
             </div>
             <div className="flex items-center">
               <img
-                src="src/assets/images/pict/headphone.png"
+                src="public/images/pict/headphone.png"
                 alt=""
                 className="w-full h-full object-contain"
               />
