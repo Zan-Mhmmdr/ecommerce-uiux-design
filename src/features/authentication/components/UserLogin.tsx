@@ -8,7 +8,7 @@ const UserLogin = () => {
           <div className="relative">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
               <img
-                src="/src/assets/images/icons/mail.svg"
+                src="/images/icons/mail.svg"
                 alt="icon"
                 className="w-5 h-5 text-[#BABABA]"
               />
@@ -23,7 +23,7 @@ const UserLogin = () => {
           <div className="relative">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
               <img
-                src="/src/assets/images/icons/lock.svg"
+                src="/images/icons/lock.svg"
                 alt="icon"
                 className="w-5 h-5 text-[#BABABA]"
               />
