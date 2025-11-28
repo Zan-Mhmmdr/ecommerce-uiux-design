@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { products } from "../products/data/products";
+
+
 const HomePage = () => {
   const [activateTab, setActivateTab] = useState<string>("headphone");
   const navigate = useNavigate();
