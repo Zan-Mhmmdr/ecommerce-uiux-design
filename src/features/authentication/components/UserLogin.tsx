@@ -11,11 +11,11 @@ const UserLogin = () => {
       alert("Please enter both email and password.");
       return;
     }
+  };
 
-    const user = {
-      name: "Reigen Arataka",
-      email: email,
-    };
+  const user = {
+    name: "Reigen Arataka",
+    email: email,
   };
 
   localStorage.setItem("user", JSON.stringify(user));
@@ -38,6 +38,8 @@ const UserLogin = () => {
             <input
               type="text"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full h-[50px] pl-10 pr-4 py-2  font-dmsans text-sm font-bold tracking-[0.2px] border text-[#BABABA] rounded-lg bg-white outline-none"
             />
           </div>
@@ -53,6 +55,8 @@ const UserLogin = () => {
             <input
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full h-[50px] pl-10 pr-4 py-2  font-dmsans text-sm font-bold tracking-[0.2px] border text-[#BABABA] rounded-lg bg-white outline-none"
             />
           </div>
@@ -65,7 +69,10 @@ const UserLogin = () => {
         </div>
       </div>
       <div className="w-full px-6 py-5 flex flex-col gap-6">
-        <button className="h-[50px] px-10 w-full bg-[#0ACF83] text-[16px] rounded-lg font-semibold font-dmsans tracking-[0.2px] text-[#ffffff]">
+        <button
+          onClick={handleLogin}
+          className="h-[50px] px-10 w-full bg-[#0ACF83] text-[16px] rounded-lg font-semibold font-dmsans tracking-[0.2px] text-[#ffffff]"
+        >
           Sign In
         </button>
         <p className="text-center font-light text-sm font-dmsans tracking-[0.2px] text-white">
