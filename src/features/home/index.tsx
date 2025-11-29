@@ -122,6 +122,7 @@ const HomePage = () => {
           {filteredItems.map((item) => (
             <Link
               to={`/products/product-detail/${item.id}`}
+              key={item.id}
               className="bg-[#ffffff] shrink-0 flex flex-col w-[155px] rounded-2xl items-center px-2.5 pt-[15px] gap-5"
             >
               <img src={item.image} className="h-[145px]" alt="" />

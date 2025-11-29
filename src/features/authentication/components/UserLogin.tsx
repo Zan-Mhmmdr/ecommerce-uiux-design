@@ -1,6 +1,27 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const UserLogin = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    if (!email || !password) {
+      alert("Please enter both email and password.");
+      return;
+    }
+
+    const user = {
+      name: "Reigen Arataka",
+      email: email,
+    };
+  };
+
+  localStorage.setItem("user", JSON.stringify(user));
+
+  navigate("/");
+
   return (
     <>
       <div className="pt-33 w-full px-6 flex flex-col gap-5">
