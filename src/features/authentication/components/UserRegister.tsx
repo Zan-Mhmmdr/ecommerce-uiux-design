@@ -4,7 +4,7 @@ import lockIcon from "/src/assets/images/icons/lock.svg";
 import appleIcon from "/src/assets/images/icons/Apple Auth.svg";
 import facebookIcon from "/src/assets/images/icons/Facebook Auth.svg";
 import googleIcon from "/src/assets/images/icons/Google Auth.svg";
-import { use } from "react";
+import { useState } from "react";
 
 const UserRegister = () => {
   const navigate = useNavigate();
@@ -68,7 +68,10 @@ const UserRegister = () => {
       </div>
 
       <div className="w-full pt-5 px-6 py-1 flex flex-col gap-6">
-        <button className="h-[50px] px-10 w-full bg-[#0ACF83] text-[16px] rounded-lg font-semibold font-dmsans tracking-[0.2px] text-[#ffffff]">
+        <button
+          onClick={handleRegister}
+          className="h-[50px] px-10 w-full bg-[#0ACF83] text-[16px] rounded-lg font-semibold font-dmsans tracking-[0.2px] text-[#ffffff]"
+        >
           Sign Up
         </button>
 
