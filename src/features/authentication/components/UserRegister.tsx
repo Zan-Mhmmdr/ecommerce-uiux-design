@@ -1,11 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import mailIcon from "/src/assets/images/icons/mail.svg";
 import lockIcon from "/src/assets/images/icons/lock.svg";
 import appleIcon from "/src/assets/images/icons/Apple Auth.svg";
 import facebookIcon from "/src/assets/images/icons/Facebook Auth.svg";
 import googleIcon from "/src/assets/images/icons/Google Auth.svg";
+import { use } from "react";
 
 const UserRegister = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleRegister = () => {
+    if (!email || !password) {
+      alert("Please enter both email and password.");
+      return;
+    }
+  };
+
+  const user = {
+    name: "Reigen Arataka",
+    email: email,
+  };
+
+  localStorage.setItem("user", JSON.stringify(user));
+  navigate("/");
+
   return (
     <>
       <div className="w-full pt-16 px-6 flex flex-col gap-5">
@@ -22,6 +41,8 @@ const UserRegister = () => {
             <input
               type="text"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full h-[50px] pl-10 pr-4 py-2 font-dmsans text-sm font-bold tracking-[0.2px] border text-[#BABABA] rounded-lg bg-white outline-none"
             />
           </div>
@@ -38,6 +59,8 @@ const UserRegister = () => {
             <input
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full h-[50px] pl-10 pr-4 py-2 font-dmsans text-sm font-bold tracking-[0.2px] border text-[#BABABA] rounded-lg bg-white outline-none"
             />
           </div>
