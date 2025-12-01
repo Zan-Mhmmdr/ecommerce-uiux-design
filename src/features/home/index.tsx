@@ -2,13 +2,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { products } from "../products/data/products";
 
-
 const HomePage = () => {
   const [activateTab, setActivateTab] = useState<string>("headphone");
   const navigate = useNavigate();
 
   const filteredItems = products.filter((p) => p.category === activateTab);
-  console.log(filteredItems);
 
   const tabs = [
     { id: "headphone", label: "Headphone" },
@@ -18,6 +16,9 @@ const HomePage = () => {
     { id: "headset", label: "Headset" },
     { id: "watch", label: "Watch" },
   ];
+
+  const user2 = { email: "a", password: "123" };
+  JSON.stringify(user2);
 
   return (
     <>
