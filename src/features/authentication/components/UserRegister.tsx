@@ -4,6 +4,8 @@ import lockIcon from "/src/assets/images/icons/lock.svg";
 import appleIcon from "/src/assets/images/icons/Apple Auth.svg";
 import facebookIcon from "/src/assets/images/icons/Facebook Auth.svg";
 import googleIcon from "/src/assets/images/icons/Google Auth.svg";
+import userName from "/src/assets/images/icons/user.png";
+
 import { useState } from "react";
 
 const UserRegister = () => {
@@ -34,7 +36,7 @@ const UserRegister = () => {
           <div className="relative">
             <span className="absolute inset-y-0 left-0 flex items-center pl-3">
               <img
-                src={mailIcon}
+                src={userName}
                 alt="icon"
                 className="w-5 h-5 text-[#BABABA]"
               />
