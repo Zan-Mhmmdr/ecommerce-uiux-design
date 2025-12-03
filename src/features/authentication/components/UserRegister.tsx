@@ -20,7 +20,9 @@ const UserRegister = () => {
       return;
     }
 
-    const users = JSON.parse(localStorage.getItem("user") || "null");
+    const storedUsers = JSON.parse(localStorage.getItem("user") || "null");
+
+    const users = Array.isArray(storedUsers) ? storedUsers : [];
 
     const isExist = users.find(
       (user: { email: string }) => user.email === email
@@ -39,8 +41,8 @@ const UserRegister = () => {
 
     users.push(user);
 
-    localStorage.setItem("user", JSON.stringify(user));
-    navigate("/");
+    localStorage.setItem("user", JSON.stringify(users));
+    navigate("/login");
   };
 
   return (
