@@ -11,16 +11,31 @@ const UserLogin = () => {
       alert("Please enter both email and password.");
       return;
     }
+
+    const storedUsers = JSON.parse(localStorage.getItem("user") || "null");
+
+    const users = Array.isArray(storedUsers) ? storedUsers : [];
+
+    const foundUser = users.find(
+      (user: { email: string; password: string }) =>
+        user.email === email && user.password === password
+    );
+
+    if (!foundUser) {
+      alert("Invalid email or password.");
+      return;
+    }
+
+    const loginUser = {
+      name: foundUser.name,
+      email: foundUser.email,
+    };
+
+    localStorage.setItem("user", JSON.stringify(loginUser));
+
+    alert("Login successful!");
+    navigate("/");
   };
-
-  const user = {
-    name: "Reigen Arataka",
-    email: email,
-  };
-
-  localStorage.setItem("user", JSON.stringify(user));
-
-  navigate("/");
 
   return (
     <>
