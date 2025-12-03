@@ -11,6 +11,7 @@ import ProductPage from "./features/products";
 import ProductDetail from "./features/productDetail";
 import ShoppingCart from "./features/shoppingCart";
 import Profile from "./features/profile";
+import ProtectedRoute from "./features/home/components/ProtectedRoute";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -21,17 +22,20 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/register" element={<UserRegister />} />
         </Route>
 
-        <Route path="/*" element={<HomePage />} />
-        <Route path="search" element={<SearchPage />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/*" element={<HomePage />} />
+          <Route path="search" element={<SearchPage />} />
 
-        <Route path="products">
-          <Route index element={<ProductPage />} />
-          <Route path="product-detail/:id" element={<ProductDetail />} />
+          <Route path="products">
+            <Route index element={<ProductPage />} />
+            <Route path="product-detail/:id" element={<ProductDetail />} />
+          </Route>
+
+          <Route path="/shopping-cart" element={<ShoppingCart />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
 
-        <Route path="/shopping-cart" element={<ShoppingCart />} />
-
-        <Route path="/profile" element={<Profile />} />
+        
       </Routes>
     </BrowserRouter>
   </StrictMode>
