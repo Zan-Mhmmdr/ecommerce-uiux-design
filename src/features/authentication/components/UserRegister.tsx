@@ -15,19 +15,33 @@ const UserRegister = () => {
   const [password, setPassword] = useState("");
 
   const handleRegister = () => {
-    if (!email || !password) {
-      alert("Please enter both email and password.");
+    if (!email || !password || !name) {
+      alert("Please fill all fields.");
       return;
     }
-  };
 
-  const user = {
-    name: "",
-    email: email,
-  };
+    const users = JSON.parse(localStorage.getItem("user") || "null");
 
-  localStorage.setItem("user", JSON.stringify(user));
-  navigate("/");
+    const isExist = users.find(
+      (user: { email: string }) => user.email === email
+    );
+
+    if (isExist) {
+      alert("User already exists with this email.");
+      return;
+    }
+
+    const user = {
+      name: name,
+      email: email,
+      password: password,
+    };
+
+    users.push(user);
+
+    localStorage.setItem("user", JSON.stringify(user));
+    navigate("/");
+  };
 
   return (
     <>
