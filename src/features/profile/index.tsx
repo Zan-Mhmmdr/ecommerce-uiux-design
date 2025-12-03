@@ -1,8 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import back from "/images/icons/chevron-left.svg";
 import reigen from "/images/pict/reigen.png";
 
 const Profile = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    alert("Logout successful!");
+
+    navigate("/login");
+  };
+
   return (
     <>
       <div className="flex px-6 items-center">
@@ -92,12 +101,12 @@ const Profile = () => {
           </Link>
         </div>
         <div className="flex py-[15px] gap-2.5 border-b border-[#00000026] -mx-6 px-6 ">
-          <Link
-            to={"/profile"}
+          <button
+            onClick={handleLogout}
             className="font-dmsans text-[16px] tracking-[0.2px]"
           >
             Logout
-          </Link>
+          </button>
         </div>
       </div>
     </>
