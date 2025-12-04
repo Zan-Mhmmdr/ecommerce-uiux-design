@@ -2,11 +2,15 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../products/data/products";
 import { useSearchStore } from "../../store/useSearchStore";
+import { useCartStore } from "../../store/useCartStore";
 
 const SearchPage = () => {
   const [inputQuery, setInputQuery] = useState("");
   const { searchHistory, addSearchHistory, removeSearchHistory } =
     useSearchStore();
+
+  const items = useCartStore((state) => state.items);
+  const totalItems = items.reduce((sum, item) => sum + item.qty, 0);
 
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(inputQuery.toLowerCase())
@@ -23,9 +27,19 @@ const SearchPage = () => {
         <h1 className="font-bold text-[16px] font-dmsans tracking-[0.2px] leading-5">
           Search
         </h1>
-        <Link to="/shopping-cart">
-          <img src="/images/icons/shopping-cart.svg" alt="Cart" />
-        </Link>
+        <div className="">
+          <Link to="/shopping-cart">
+            <img src="/images/icons/shopping-cart.svg" alt="Cart" />
+          </Link>
+          {totalItems > 0 && (
+            <span
+              className="absolute -top-1 -right-2 bg-red-500 text-white text-[10px]
+          rounded-full min-w-4 h-4 flex items-center justify-center px-1"
+            >
+              {totalItems > 9 ? "9+" : totalItems}
+            </span>
+          )}
+        </div>
       </div>
 
       <div className="py-[30px] bg-[#ffffff] px-6">

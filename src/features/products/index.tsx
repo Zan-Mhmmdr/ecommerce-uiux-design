@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { products } from "./data/products";
+import { useCartStore } from "../../store/useCartStore";
 
 const ProductPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activateTab, setActivateTab] = useState<string>("headphone");
   const [activateSortBy, setActivateSortBy] = useState<string>("newest");
   const [activateSortBy2, setActivateSortBy2] = useState<string>("high-price");
+  const items = useCartStore((state) => state.items);
+
+  const totalItems = items.reduce((sum, item) => sum + item.qty, 0);
 
   const tabs = [
     { id: "headphone", label: "Headphone" },
@@ -34,9 +38,20 @@ const ProductPage = () => {
         <Link to="/home">
           <img src="/images/icons/chevron-left.svg" alt="Back" />
         </Link>
-        <Link to="/shopping-cart">
-          <img src="/images/icons/shopping-cart.svg" alt="Cart" />
-        </Link>
+        <div className="relative">
+          <Link to="/shopping-cart">
+            <img src="/images/icons/shopping-cart.svg" alt="Cart" />
+          </Link>
+
+          {totalItems > 0 && (
+            <span
+              className="absolute -top-1 -right-2 bg-red-500 text-white text-[10px]
+          rounded-full min-w-4 h-4 flex items-center justify-center px-1"
+            >
+              {totalItems > 9 ? "9+" : totalItems}
+            </span>
+          )}
+        </div>
       </div>
       <div className="flex flex-col px-6 gap-[11px] py-6">
         <h2 className="font-dmsans font-light text-[16px] tracking-[0.2px]">

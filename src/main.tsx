@@ -17,6 +17,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
+        
         <Route element={<Layout />}>
           <Route path="/login" element={<UserLogin />} />
           <Route path="/register" element={<UserRegister />} />
@@ -35,7 +36,6 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/profile" element={<Profile />} />
         </Route>
 
-        
       </Routes>
     </BrowserRouter>
   </StrictMode>
