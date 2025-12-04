@@ -22,7 +22,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className=" flex flex-row justify-between bg-[#ffffff] px-6 items-center">
+      <div className=" flex flex-row justify-between bg-[#ffffff] px-6 items-center pt-3">
         <a href="">
           <img src="/images/icons/menu-variant.svg" alt="" />
         </a>

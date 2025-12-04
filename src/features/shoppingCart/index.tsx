@@ -11,7 +11,7 @@ const ShoppingCart = () => {
   console.log(items);
   return (
     <>
-      <div className="flex px-6 pb-5 justify-between fixed top-0 left-0 w-full bg-white z-50">
+      <div className="flex px-6 pb-5 justify-between fixed top-0 left-0 w-full bg-white z-50 pt-3">
         <Link to={"/"}>
           <img src={back} alt="" />
         </Link>

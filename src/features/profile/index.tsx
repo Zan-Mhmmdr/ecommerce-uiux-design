@@ -14,7 +14,7 @@ const Profile = () => {
 
   return (
     <>
-      <div className="flex px-6 items-center">
+      <div className="flex px-6 items-center pt-3">
         <Link to={"/"}>
           <img src={back} alt="" />
         </Link>

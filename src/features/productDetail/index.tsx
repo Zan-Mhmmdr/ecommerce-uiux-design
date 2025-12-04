@@ -5,11 +5,15 @@ import { useState } from "react";
 import Overview from "./components/Overview";
 import Features from "./components/Features";
 import { products } from "../products/data/products";
+import { useCartStore } from "../../store/useCartStore";
 
 const ProductDetail = () => {
   const [activeTab, setActiveTab] = useState<string>("overview");
   const { id } = useParams();
   const product = products.find((p) => p.id === Number(id));
+  const items = useCartStore((state) => state.items);
+
+  const totalItems = items.reduce((sum, item) => sum + item.qty, 0);
 
   const tabs = [
     { id: "overview", label: "Overview" },
@@ -21,14 +25,25 @@ const ProductDetail = () => {
   }
   return (
     <>
-      <div className="bg-[#ffffff] px-6">
-        <div className="flex px-6 pb-5 justify-between fixed top-0 left-0 w-full bg-white z-50">
+      <div className="bg-[#ffffff] px-6 ">
+        <div className="flex px-6 pb-5 justify-between fixed top-0 left-0 w-full bg-white z-50 pt-3">
           <Link to="/products">
             <img src={chevronLeft} alt="Back" />
           </Link>
-          <Link to="/shopping-cart">
-            <img src={shoppingCart} alt="Cart" />
-          </Link>
+          <div className="relative">
+            <Link to="/shopping-cart">
+              <img src={shoppingCart} alt="Cart" />
+            </Link>
+
+            {totalItems > 0 && (
+              <span
+                className="absolute -top-1 -right-2 bg-red-500 text-white text-[10px]
+          rounded-full min-w-4 h-4 flex items-center justify-center px-1"
+              >
+                {totalItems > 9 ? "9+" : totalItems}
+              </span>
+            )}
+          </div>
         </div>
 
         <div className="flex flex-col gap-1.5 pt-26 ">
