@@ -12,12 +12,12 @@ import ProductDetail from "./features/productDetail";
 import ShoppingCart from "./features/shoppingCart";
 import Profile from "./features/profile";
 import ProtectedRoute from "./features/home/components/ProtectedRoute";
+import EditProfilePage from "./features/profile/components/EditProfilePage";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        
         <Route element={<Layout />}>
           <Route path="/login" element={<UserLogin />} />
           <Route path="/register" element={<UserRegister />} />
@@ -34,8 +34,8 @@ createRoot(document.getElementById("root")!).render(
 
           <Route path="/shopping-cart" element={<ShoppingCart />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/edit-profile" element={<EditProfilePage />} />
         </Route>
-
       </Routes>
     </BrowserRouter>
   </StrictMode>
