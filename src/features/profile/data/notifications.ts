@@ -1,7 +1,7 @@
 import reigen from "/images/pict/reigen.png";
 import akane from "/images/pict/akane.jpg";
-import ninrir from "/images/pict/reigen.png";
-import ado from "/images/pict/ado.webp";
+import ninrir from "/images/pict/ninrir.jpg";
+import ado from "/images/pict/ado.jpg";
 import chono from "/images/pict/chono.jpg";
 
 export const notifications = [
