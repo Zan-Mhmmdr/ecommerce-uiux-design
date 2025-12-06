@@ -14,6 +14,7 @@ import Profile from "./features/profile";
 import ProtectedRoute from "./features/home/components/ProtectedRoute";
 import EditProfilePage from "./features/profile/components/EditProfilePage";
 import NotifPage from "./features/profile/components/NotifPage";
+import TermsOfUsePage from "./features/profile/components/TermsOfUsePage";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -27,16 +28,15 @@ createRoot(document.getElementById("root")!).render(
         <Route element={<ProtectedRoute />}>
           <Route path="/*" element={<HomePage />} />
           <Route path="search" element={<SearchPage />} />
-
           <Route path="products">
             <Route index element={<ProductPage />} />
             <Route path="product-detail/:id" element={<ProductDetail />} />
           </Route>
-
           <Route path="/shopping-cart" element={<ShoppingCart />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit-profile" element={<EditProfilePage />} />
           <Route path="/profile/notif-page" element={<NotifPage />} />
+          <Route path="/profile/terms-of-use" element={<TermsOfUsePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

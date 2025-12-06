@@ -14,7 +14,7 @@ const Profile = () => {
 
   return (
     <>
-      <div className="flex px-6 items-center pt-3">
+      <div className="flex px-6 items-center pt-5">
         <Link to={"/"}>
           <img src={back} alt="" />
         </Link>
@@ -50,22 +50,16 @@ const Profile = () => {
             Edit Profile
           </Link>
         </div>
-        <div className="flex py-[15px] gap-2.5 border-b border-[#00000026] -mx-6 px-6 ">
+        <div className="flex justify-between py-[15px] gap-2.5 border-b border-[#00000026] -mx-6 px-6 ">
           <Link
             to={"notif-page"}
             className="font-dmsans text-[16px] tracking-[0.2px]"
           >
             Notifications
           </Link>
+          <span className="rounded-full px-2 w-5 h-5 flex items-center justify-center text-xs bg-red-400 text-white">5</span>
         </div>
-        <div className="flex py-[15px] gap-2.5 border-b border-[#00000026] -mx-6 px-6 ">
-          <Link
-            to={"/profile"}
-            className="font-dmsans text-[16px] tracking-[0.2px]"
-          >
-            Wishlist
-          </Link>
-        </div>
+       
         <div className="flex py-5 -mx-6 px-6 gap-2.5 ">
           <div className="font-dmsans  text-sm tracking-[0.2px] text-[#7F7F7F]">
             Legal
@@ -73,7 +67,7 @@ const Profile = () => {
         </div>
         <div className="flex py-[15px] gap-2.5 border-b border-[#00000026] -mx-6 px-6 ">
           <Link
-            to={"/profile"}
+            to={"terms-of-use"}
             className="font-dmsans text-[16px] tracking-[0.2px]"
           >
             Terms of Use

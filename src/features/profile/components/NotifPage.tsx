@@ -16,11 +16,12 @@ const NotifPage = () => {
       label: "Recomanded",
     },
   ];
+  
 
   return (
     <>
       <div className="flex px-6 items-center pt-5">
-        <Link to={"/"}>
+        <Link to={"/profile"}>
           <img src={back} alt="" />
         </Link>
 

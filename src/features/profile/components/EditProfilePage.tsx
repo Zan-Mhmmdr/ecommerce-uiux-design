@@ -5,8 +5,8 @@ import reigen from "/images/pict/reigen.png";
 const EditProfilePage = () => {
   return (
     <>
-      <div className="flex px-6 items-center pt-3">
-        <Link to={"/"}>
+      <div className="flex px-6 items-center pt-5">
+        <Link to={"/profile"}>
           <img src={back} alt="" />
         </Link>
 
