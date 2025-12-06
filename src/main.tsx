@@ -13,6 +13,7 @@ import ShoppingCart from "./features/shoppingCart";
 import Profile from "./features/profile";
 import ProtectedRoute from "./features/home/components/ProtectedRoute";
 import EditProfilePage from "./features/profile/components/EditProfilePage";
+import NotifPage from "./features/profile/components/NotifPage";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -35,6 +36,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/shopping-cart" element={<ShoppingCart />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit-profile" element={<EditProfilePage />} />
+          <Route path="/profile/notif-page" element={<NotifPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
