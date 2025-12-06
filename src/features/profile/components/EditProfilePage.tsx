@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import back from "/images/icons/chevron-left.svg";
-import reigen from "/images/pict/reigen.png";
+import reigen from "/images/pict/reigen.png"; 
 
 const EditProfilePage = () => {
   return (

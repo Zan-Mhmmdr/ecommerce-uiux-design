@@ -52,7 +52,7 @@ const Profile = () => {
         </div>
         <div className="flex py-[15px] gap-2.5 border-b border-[#00000026] -mx-6 px-6 ">
           <Link
-            to={"/profile"}
+            to={"notif-page"}
             className="font-dmsans text-[16px] tracking-[0.2px]"
           >
             Notifications
