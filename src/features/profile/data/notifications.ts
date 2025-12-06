@@ -1,4 +1,8 @@
 import reigen from "/images/pict/reigen.png";
+import akane from "/images/pict/akane.jpg";
+import ninrir from "/images/pict/reigen.png";
+import ado from "/images/pict/ado.webp";
+import chono from "/images/pict/chono.jpg";
 
 export const notifications = [
   {
@@ -12,7 +16,7 @@ export const notifications = [
   {
     id: 2,
     name: "Kurokawa Akane",
-    avatar: "/src/assets/images/pict/akane2.jpg",
+    avatar: akane,
     message:
       "Ada produk baru yang mungkin kamu suka! Cek sekarang sebelum kehabisan.",
     time: "10 minutes ago",
@@ -20,14 +24,14 @@ export const notifications = [
   {
     id: 3,
     name: "Ninrir",
-    avatar: "/src/assets/images/pict/ninrir.jpg",
+    avatar: ninrir,
     message: "Akunmu berhasil diperbarui. Pastikan data pribadimu selalu aman.",
     time: "1 hour ago",
   },
   {
     id: 4,
     name: "Ado",
-    avatar: "/src/assets/images/pict/ado.webp",
+    avatar: ado,
     message:
       "Kamu mendapatkan diskon spesial hari ini. Gunakan sebelum jam 12 malam.",
     time: "Yesterday",
@@ -35,7 +39,7 @@ export const notifications = [
   {
     id: 5,
     name: "Chono Hina",
-    avatar: "/src/assets/images/pict/chono.jpg",
+    avatar: chono,
     message:
       "Rekomendasi baru berdasarkan aktivitas kamu. Produk dengan rating tinggi tersedia.",
     time: "2 days ago",
