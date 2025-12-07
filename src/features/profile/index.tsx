@@ -57,9 +57,11 @@ const Profile = () => {
           >
             Notifications
           </Link>
-          <span className="rounded-full px-2 w-5 h-5 flex items-center justify-center text-xs bg-red-400 text-white">5</span>
+          <span className="rounded-full px-2 w-5 h-5 flex items-center justify-center text-xs bg-red-400 text-white">
+            5
+          </span>
         </div>
-       
+
         <div className="flex py-5 -mx-6 px-6 gap-2.5 ">
           <div className="font-dmsans  text-sm tracking-[0.2px] text-[#7F7F7F]">
             Legal
@@ -75,7 +77,7 @@ const Profile = () => {
         </div>
         <div className="flex py-[15px] gap-2.5 border-b border-[#00000026] -mx-6 px-6 ">
           <Link
-            to={"/profile"}
+            to={"privacy-policy"}
             className="font-dmsans text-[16px] tracking-[0.2px]"
           >
             Privacy Policy
