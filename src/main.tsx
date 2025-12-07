@@ -15,6 +15,7 @@ import ProtectedRoute from "./features/home/components/ProtectedRoute";
 import EditProfilePage from "./features/profile/components/EditProfilePage";
 import NotifPage from "./features/profile/components/NotifPage";
 import TermsOfUsePage from "./features/profile/components/TermsOfUsePage";
+import PrivacyPolicyPage from "./features/profile/components/PrIvacyPolicyPage";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -37,6 +38,10 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/profile/edit-profile" element={<EditProfilePage />} />
           <Route path="/profile/notif-page" element={<NotifPage />} />
           <Route path="/profile/terms-of-use" element={<TermsOfUsePage />} />
+          <Route
+            path="/profile/privacy-policy"
+            element={<PrivacyPolicyPage />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>
