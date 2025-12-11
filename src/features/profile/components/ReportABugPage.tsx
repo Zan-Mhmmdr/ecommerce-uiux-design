@@ -15,16 +15,6 @@ const ReportABugPage = () => {
       </div>
 
       <div className="min-h-screen bg-slate-50 p-4 flex flex-col">
-        {/* Header */}
-        <header className="flex items-center gap-3">
-          <button
-            aria-label="Back"
-            className="p-2 rounded-full bg-white shadow-sm"
-          >
-            ‹
-          </button>
-          <h1 className="text-lg font-semibold">Report a Bug</h1>
-        </header>
         {/* Main Content */}
         <main className="mt-4 bg-white rounded-2xl shadow-md p-4 flex-1 space-y-4">
           <div>
