@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import back from "/images/icons/chevron-left.svg";
+import { useState } from "react";
 
 const ReportABugPage = () => {
+  const [inputTitle, setInputTitle] = useState("");
+  const [inputDescription, setInputDescription] = useState("");
+  const [inputSteps, setInputSteps] = useState("");
+  const [inputSeverity, setInputSeverity] = useState("");
+  const [inputEmail, setInputEmail] = useState("");
+  const [attachedImages, setAttachedImages] = useState<File[]>([]);
+
   return (
     <>
       <div className="flex px-6 items-center pt-5">
