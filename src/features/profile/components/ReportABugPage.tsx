@@ -8,12 +8,8 @@ const ReportABugPage = () => {
   const [inputSteps, setInputSteps] = useState("");
   const [inputSeverity, setInputSeverity] = useState("");
   const [inputEmail, setInputEmail] = useState("");
-  const [attachedImages, setAttachedImages] = useState<File[]>([]);
 
-  const handleImageChange = (e) => {
-    const files = Array.from(e.target.files || []).slice(0, 3);
-    setAttachedImages(files);
-  };
+  
 
   return (
     <>
@@ -109,7 +105,6 @@ const ReportABugPage = () => {
                 accept="image/*"
                 multiple
                 className="hidden"
-                onChange={handleImageChange}
               />
               <span className="text-xs opacity-80">
                 {attachedImages.length
