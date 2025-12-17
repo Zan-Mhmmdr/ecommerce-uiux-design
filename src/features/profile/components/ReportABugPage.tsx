@@ -106,11 +106,7 @@ const ReportABugPage = () => {
                 multiple
                 className="hidden"
               />
-              <span className="text-xs opacity-80">
-                {attachedImages.length
-                  ? `${attachedImages.length} image(s) selected`
-                  : "Tap to attach images"}
-              </span>
+            
               <span className="ml-auto text-xs text-slate-400">PNG, JPG</span>
             </label>
           </div>
