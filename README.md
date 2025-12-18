@@ -1,5 +1,24 @@
-📱 E-Commerce App
+# 🛒 React TS E-Commerce
 
-Built with React + TypeScript + TailwindCSS + Zustand (Mobile First)
+A modern e-commerce web application built with **React**, **TypeScript**, and **Tailwind CSS**.  
+Designed to be fast, responsive, and scalable.
 
-A modern, mobile-first e-commerce web application featuring product listings, cart, checkout flow, global state management using Zustand, and responsive UI using TailwindCSS.
+## ✨ Features
+
+- Product listing & detail page
+- Shopping cart
+- Responsive UI with Tailwind CSS
+- Type-safe codebase with TypeScript
+- Reusable components
+- Clean folder structure
+- Ready for API integration
+
+## 🧱 Tech Stack
+
+- ⚛️ React
+- 🟦 TypeScript
+- 🎨 Tailwind CSS
+- ⚡ Vite
+- 🛠️ ESLint + Prettier (optional)
+
+## 📂 Project Structure
